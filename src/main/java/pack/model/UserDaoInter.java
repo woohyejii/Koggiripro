@@ -16,6 +16,8 @@ public interface UserDaoInter {
 	UserBean selectNameUser(String name);
 	String selectUsernoName(int userNo);
 	
+	UserBean selectunoUser(int userNo);
+	
 	String selectNoPwd(int userNo);
 	int selectNameUserno(String name);
 }

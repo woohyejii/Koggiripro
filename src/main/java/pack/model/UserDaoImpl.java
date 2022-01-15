@@ -108,8 +108,13 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDaoInter{
 
 	@Override
 	public String selectUsernoName(int userNo) {
-		
 		return getSqlSession().selectOne("selectUsernoName",userNo);
+	}
+
+
+	@Override
+	public UserBean selectunoUser(int userNo) {
+		return getSqlSession().selectOne("selectunoUser",userNo);
 	}
 	
 	
