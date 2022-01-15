@@ -1,0 +1,40 @@
+package pack.model;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class PostingImpl extends SqlSessionDaoSupport implements PostingInter{
+	@Autowired
+	public PostingImpl(SqlSessionFactory factory) {
+		setSqlSessionFactory(factory);
+	}
+
+	@Override
+	public PostDto getDetail(PostDto dto) {
+		// TODO Auto-generated method stub
+		return getSqlSession().selectOne("postOne",dto);
+	}
+
+	@Override
+	public boolean updatePostcnt(PostDto dto) {
+		int re = getSqlSession().update("updatePostcnt", dto);
+		if(re > 0)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public boolean updatePost(PostDto dto) {
+		
+		int re = getSqlSession().update("updatePost", dto);
+		if(re > 0)
+			return true;
+		else
+			return false;
+	}
+
+}
