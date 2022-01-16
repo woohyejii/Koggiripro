@@ -169,8 +169,13 @@ function checkData(){
   	   alert("비밀번호를 20글자 이내로 입력해주세요");
   	      frm.password.focus();
   	      return;
-     }
+   }
    
+   if(frm.password.value!=document.querySelector("#password2").value){
+	      alert("비밀번호가 일치하지 않습니다!");
+	      frm.password2.focus();
+	      return;
+	}
    
    if(frm.name.value===""){
       alert("닉네임을 입력하세요~");
@@ -189,11 +194,7 @@ function checkData(){
       return;
    }
    
-   if(frm.password.value!=document.querySelector("#password2").value){
-      alert("비밀번호가 일치하지 않습니다!");
-      frm.password2.focus();
-      return;
-   }
+  
    
    frm.submit();
    
