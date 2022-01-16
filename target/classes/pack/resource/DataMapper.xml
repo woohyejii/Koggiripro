@@ -205,7 +205,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
     
     <insert id ="insertIntoBoard" parameterType="StudyBoardbean">
-    insert into postInfo values(#{postNo},#{title},#{content},sysdate,0,#{studyMemberNo})
+    insert into postInfo values(#{postNo},#{title},#{content},sysdate,0,#{studyMemberNo},#{uNo}, #{sNo})
     </insert>
     
     <select id="selectStudymemberno" parameterType="StudyMemberDto" resultType="integer">
@@ -365,8 +365,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<!-- 게시글 삭제 -->
-	<delete id="deletePost" >
-		delete from postINfo where postNo = #{postNo}
+	<delete id="deletePost" parameterType="PostDto">
+		delete from postINfo where postNo = #{postNo} and sNo=#{sNo}
 	</delete>
 	
 	
@@ -382,7 +382,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<!--게시글 업데이트-->
 	<update id="updatePost" parameterType="PostDto">
-		update postinfo set title=#{title}, content=#{content} where postno=#{postNo}
+		update postinfo set title=#{title}, content=#{content} where postno=#{postNo} and sNo=#{sNo}
 	</update>
 	
 	<!-- 스터디 가입하기 버튼 눌렀을때 이미 가입된 멤버인지 확인하기 -->

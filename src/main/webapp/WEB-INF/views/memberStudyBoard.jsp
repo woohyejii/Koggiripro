@@ -125,12 +125,14 @@ margin: 50px;
 								<%-- <button
 									onclick="location.href='deletePost?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${studyNo }&page=1'">삭제</button>
 							 --%>
-							 <a href ="deletePost?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${studyNo }&page=1" class= "section-subheading text-muted">삭제</a>
+							 <a href ="deletePost?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${studyNo }&page=1" class= "section-subheading text-muted" onclick="return confirm('삭제된 게시글은 복구가 불가합니다.\n정말로 삭제하시겠습니까?');">삭제</a>
 							 </c:when>
 						</c:choose></td>
 
 				</tr>
 			</c:forEach>
+			
+			
 			<!-- </div> -->
 			<!-- PAGING -->
 			<tr style="text-align: center;">

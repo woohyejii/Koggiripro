@@ -42,6 +42,16 @@ Profile
 </div>
 <br><br>
 
+<div>
+ 
+Board
+<br><a href="board?userNo=${userNo }">게시물 관리</a>
+<br>회원님이 작성하신 게시물을
+<br>관리하는 공간입니다.
+  
+</div>
+<br><br>
+
 
 <!--<button id="managerStudy" onclick = "location.href='mypageNew?userNo=${userNo}&memberOrManager=manager'">가입 중인 스터디</button>-->
 <!-- 

@@ -107,8 +107,8 @@ public class BoardDaoImpl extends SqlSessionDaoSupport implements BoardDaoInter{
 	}
 
 	@Override
-	public boolean deletePost(int postNo) {
-		int re = getSqlSession().delete("deletePost",postNo);
+	public boolean deletePost(PostDto dto) {
+		int re = getSqlSession().delete("deletePost",dto);
 		if(re>0) return true;
 		else return false;
 	}

@@ -50,9 +50,11 @@ public class UpdatePostController {
 	@RequestMapping(value = "updatePost", method = RequestMethod.POST)
 	public String doSqlUpdate(
 			@RequestParam("userNo") String userNo,
-			@RequestParam("studyNo") String studyNo,
+			@RequestParam("studyNo") int studyNo,
 			PostDto dto) {
 
+		dto.setsNo(studyNo);
+		
 		if (inter.updatePost(dto))
 			return "redirect:/studyboard?userNo="+userNo+"&studyNo="+studyNo +"&page=1";
 		else

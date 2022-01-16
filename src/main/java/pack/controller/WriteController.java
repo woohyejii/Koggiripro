@@ -44,6 +44,8 @@ public class WriteController {
 		bean.setPostNo(postNo);
 		int studyMemberNo = inter.selectStudymemberno(bean);
 		
+		bean.setuNo(userNo);
+		bean.setsNo(studyNo);
 		
 		bean.setStudyMemberNo(studyMemberNo);
 		boolean b = inter.insert(bean);

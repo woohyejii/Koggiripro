@@ -19,7 +19,7 @@ public interface BoardDaoInter {
 	int selectStudymemberno(StudyBoardBean bean);
 	ArrayList<BoardDto> selectSearchTitle(StudyBoardBean bean);
 	ArrayList<BoardDto> selectSearchName(StudyBoardBean bean);
-	boolean deletePost(int postNo);
+	boolean deletePost(PostDto dto);
 	int selectUserNo(int PostNo);
 	boolean updatePost(PostDto dto);
 	

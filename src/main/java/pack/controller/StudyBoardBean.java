@@ -1,10 +1,25 @@
 package pack.controller;
 
 public class StudyBoardBean {
-	private int postNo,views, userNo,studyNo,studyMemberNo;
+	private int postNo,views, userNo,studyNo,studyMemberNo, uNo, sNo;
 	private String title,name,postTime;
 	private String content;
 	private String searchPostValue,searchPostOption;
+	
+	
+	
+	public int getuNo() {
+		return uNo;
+	}
+	public void setuNo(int uNo) {
+		this.uNo = uNo;
+	}
+	public int getsNo() {
+		return sNo;
+	}
+	public void setsNo(int sNo) {
+		this.sNo = sNo;
+	}
 	public int getPostNo() {
 		return postNo;
 	}

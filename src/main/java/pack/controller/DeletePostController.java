@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pack.model.BoardDaoInter;
 import pack.model.CommDaoInter;
 import pack.model.CommentDto;
+import pack.model.PostDto;
 
 @Controller
 public class DeletePostController {
@@ -29,7 +30,11 @@ public class DeletePostController {
 		cdto.setPostNo(postNo);
 		cdinter.deletepostCom(cdto);
 		
-		if(inter.deletePost(postNo)) {
+		PostDto pdto=new PostDto();
+		pdto.setPostNo(postNo);
+		pdto.setsNo(studyNo);
+		
+		if(inter.deletePost(pdto)) {
 			return "redirect:/studyboard?userNo=" + userNo + "&studyNo=" + studyNo + "&page=1";
 		}
 		else return "redirect:/error2";

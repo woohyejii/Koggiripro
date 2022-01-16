@@ -1,8 +1,23 @@
 package pack.model;
 
 public class PostDto {
-	int postNo, studyMemberNo;
+	int postNo, studyMemberNo, uNo, sNo;
 	String title, content, postTime, views;
+	
+	
+	
+	public int getuNo() {
+		return uNo;
+	}
+	public void setuNo(int uNo) {
+		this.uNo = uNo;
+	}
+	public int getsNo() {
+		return sNo;
+	}
+	public void setsNo(int sNo) {
+		this.sNo = sNo;
+	}
 	public int getPostNo() {
 		return postNo;
 	}
