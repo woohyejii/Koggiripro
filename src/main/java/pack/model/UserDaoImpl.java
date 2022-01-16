@@ -128,6 +128,17 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDaoInter{
 		else              
 			return false;
 	}
+
+
+	@Override
+	public boolean deleteUser(int userNo) {
+		int re=getSqlSession().delete("deleteUser",userNo);
+		if(re>0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
 	
 	

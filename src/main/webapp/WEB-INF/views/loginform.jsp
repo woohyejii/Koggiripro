@@ -44,12 +44,14 @@ div{
 </head>
 <script>
 	window.onload = function() {
-
+		//로그인 화면에 들어오면 아이디 칸에 커서가 있음
+		frm.id.focus();
+		
 		let btnlog = document.querySelector("#btnlog");
-		btnlog.addEventListener("click", checkData)
+		btnlog.addEventListener("click", checkData);
 
 		let btnSign = document.querySelector("#btnSign");
-		btnSign.addEventListener("click", moveSign)
+		btnSign.addEventListener("click", moveSign);
 	}
 
 	//회원가입 버튼 누르면 회원가입 폼으로 이동
@@ -73,6 +75,12 @@ div{
 		frm.submit()
 
 	}
+	
+function enterkey() {
+	if (window.event.keyCode == 13) {
+		checkData();
+    }
+}
 </script>
 
 <body class="text-center">
@@ -86,11 +94,11 @@ div{
 			 -->
 			 
 			<div class="form-floating">
-				<input type="text" class="form-control" name="id" value="${bean.id }"> 
+				<input type="text" class="form-control" name="id" value="${bean.id }" onkeyup="enterkey()"> 
 				<label for="floatingInput">아이디</label>
 			</div>
 			<div class="form-floating">
-				<input type="password" class="form-control"  name="password" value="${bean.password }">
+				<input type="password" class="form-control"  name="password" value="${bean.password }" onkeyup="enterkey()">
 				<label for="floatingPassword">비밀번호</label>
 			</div>
 			<br>

@@ -115,9 +115,9 @@ margin: 50px;
 							</c:when>
 						</c:choose></td>
 
-					<td><c:set var="manager" value="${manager }" /> <c:set
-							var="u" value="${tmp.userNo }" /> <c:set var="s"
-							value="${userNo }" /> <c:choose>
+					<td><c:set var="manager" value="${manager }" /> 
+					<c:set var="u" value="${tmp.userNo }" /> 
+					<c:set var="s" value="${userNo }" /> <c:choose>
 							<c:when test="${manager or u eq s}">
 								<%-- <button
 									onclick="location.href='deletePost?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${studyNo }&page=1'">삭제</button>
@@ -292,6 +292,7 @@ margin: 50px;
 	
 	
 	</script>
+	
 
 	<div id="showData"></div>
 </div>

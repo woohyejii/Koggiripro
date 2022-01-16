@@ -1,18 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.onpageshow = function(event) {
+   if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+   // Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
+   location.href="check_password.jsp";
+   }
+}
+</script>
 </head>
 <script>
-//닉네임 변경 했는지 확인하는 용도
-let name=1;
+//현재 비밀번호가 정확한지 확인하는 용도
+let pwd=0;
 
 window.onload=function(){
 	
+	
+
+	
+	
+	pwd=0;
 	
 	let btnModify=document.querySelector("#btnModify");
 	btnModify.addEventListener("click", checkData);
@@ -20,11 +34,45 @@ window.onload=function(){
 	let btnName=document.querySelector("#btnName");
 	btnName.addEventListener("click", checkName);
 	
-	//name 이라는 id를 가진 name input에 keyup이벤트가 발생하면
-	   $("#name").keyup(function(){
-		   name=0;
-	   })
+	//회원 탈퇴기능
+	let deleteUser=document.querySelector("#deleteUser");
+	deleteUser.addEventListener("click", deleteUser1);
+
+}
+
+
+
+
+
+function deleteUser1(){
+	checknowPwd1();
+	if(pwd!=1){
+		return false;
+	}
 	
+	
+	if(confirm("정말로 탈퇴 하시겠습니까?\n탈퇴시 계정 복구는 불가합니다.")==true){
+		let userNo=document.querySelector(".userNo").value;
+		$.ajax({
+			url:"deleteUser",
+			type:"post",
+			dataType:"json",
+			data:{"userNo":userNo},
+			success: function(data){
+				if(data.result=="y"){
+					alert("회원 탈퇴가 정상 처리 되었습니다.\n이용해주셔서 감사합니다.")
+					location.href="index.jsp";
+				}else{
+					alert("에러!!!");
+					return false;
+				}
+			},
+			error:function(){
+		         alert("에러 발생");
+		    }
+			
+		});
+	}	
 }
 
 function checkData(){
@@ -43,10 +91,33 @@ function checknowPwd(){
 		data:{"checkPwd":checkPwd, "userNo":userNo},
 		success: function(data){
 			if(data.result=="n"){
-				alert("현재 비밀번호를 정확하게 입력해 주세요.")
+				alert("현재 비밀번호를 정확하게 입력해 주세요.");
 				return false;
 			}else{
 				checknewPwd();
+			}
+		},
+		error:function(){
+	         alert("에러 발생");
+	    }
+	});
+}
+
+function checknowPwd1(){
+	let checkPwd=document.querySelector(".checkpwd").value;
+	let userNo=document.querySelector(".userNo").value;
+	$.ajax({
+		url:"checkPwd5",
+		type:"post",
+		dataType:"json",
+		data:{"checkPwd":checkPwd, "userNo":userNo},
+		success: function(data){
+			if(data.result=="y"){
+				pwd=1;
+			}else{
+				alert("현재 비밀번호를 정확하게 입력해 주세요.");
+				pwd=0;
+				return false;
 			}
 		},
 		error:function(){
@@ -75,14 +146,7 @@ function checknewPwd(){
 	      frm.password.focus();
 	      return;
 	   }
-	
-	if(name==0){
-		alert("닉네임 변경 버튼을 눌러 변경을 완료해주세요");
-	    frm.name.focus();
-	    return;
-	}
-	
-	
+
 	frm.submit();
 	   
 }
@@ -138,12 +202,13 @@ function PopupCenter(url, title, w, h) {
 
 function inputName(nName){
 	frm.name.value=nName;
-	name=1
 }
 
 
 </script>
 <body>
+
+
 <%
 	//로그인된 아이디가 있는지 확인
 	String name = (String) session.getAttribute("namekey");
@@ -175,7 +240,7 @@ function inputName(nName){
 		</tr>
 		<tr>
 			<td>닉네임</td>
-			<td><input type="text" value=${ubean.name } name="name" class="valueName" id="name"></td>
+			<td><input type="text" value=${ubean.name } name="name" class="valueName" id="name" readonly></td>
 			<td><input type="button" value="닉네임 변경" id="btnName"></td>
 		</tr>
 		<tr>
@@ -186,6 +251,8 @@ function inputName(nName){
 		</tr>
 	</table>
 </form>
+
+<input type="button" value="회원탈퇴" id="deleteUser">
 
 </body>
 </html>

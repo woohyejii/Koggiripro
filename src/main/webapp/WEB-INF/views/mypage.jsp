@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>mypage</title>
+
 </head>
 <body>
 <%

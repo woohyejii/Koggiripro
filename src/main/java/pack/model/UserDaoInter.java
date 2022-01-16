@@ -11,6 +11,7 @@ public interface UserDaoInter {
 	boolean useId(UserBean bean);
 	boolean useName(UserBean bean);
 	boolean updateUinfo(UserBean bean);
+	boolean deleteUser(int userNo);
 	
 	String selectName(UserBean bean);
 	UserBean selectidUser(String id);

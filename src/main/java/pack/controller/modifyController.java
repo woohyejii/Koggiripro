@@ -50,13 +50,13 @@ public class modifyController {
 		
 	}
 	
-	@RequestMapping(value="modify", method=RequestMethod.POST)
+	@RequestMapping(value="modify", method=RequestMethod.GET)
 	public ModelAndView modify(
 			@RequestParam("userNo")int userNo){
 		
 		UserBean ubean=daoInter.selectunoUser(userNo);
 		
-		ModelAndView andView=new ModelAndView();
+		ModelAndView andView=new ModelAndView("modify");
 		andView.addObject("ubean", ubean);
 		return andView;
 	}
@@ -87,5 +87,26 @@ public class modifyController {
 		}else {
 			return "err";
 		}
+	}
+	
+	@RequestMapping(value="deleteUser", method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,String> deleteUser(@RequestParam("userNo")int userNo){
+		boolean b=daoInter.deleteUser(userNo);
+		
+		Map<String, String> map=new HashMap<String, String>();
+		
+		if(b) {
+			System.out.println("탈퇴가 정상처리되었습니다.");
+			map.put("result", "y");
+			System.out.println(map);
+			return map;
+		}else {
+			System.out.println("에러!! 탈퇴 실패");
+			map.put("result", "n");
+			System.out.println(map);
+			return map;
+		}
+		
 	}
 }
