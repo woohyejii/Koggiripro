@@ -47,7 +47,7 @@ function checkData(){
 <br><br><br>
 <h3>비밀번호 확인</h3>
 <br>
-<%=name %>님의 회원정보를 안전하게 보호하기 위해 <br>
+<b><font color="green"><%=name %></font></b>님의 회원정보를 안전하게 보호하기 위해 <br>
 비밀번호를 한번 더 확인해 주세요.
 <br>
 <br>

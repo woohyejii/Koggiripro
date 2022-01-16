@@ -116,6 +116,18 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDaoInter{
 	public UserBean selectunoUser(int userNo) {
 		return getSqlSession().selectOne("selectunoUser",userNo);
 	}
+
+
+	@Override
+	public boolean updateUinfo(UserBean bean) {
+		//닉네임 중복확인 - 닉네임을 사용할 수 있는지
+		int i=getSqlSession().update("updateUinfo",bean);
+		
+		if(i>0)
+			return true;
+		else              
+			return false;
+	}
 	
 	
 	

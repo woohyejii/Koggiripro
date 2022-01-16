@@ -3,6 +3,8 @@ package pack.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,5 +59,33 @@ public class modifyController {
 		ModelAndView andView=new ModelAndView();
 		andView.addObject("ubean", ubean);
 		return andView;
+	}
+	
+	@RequestMapping(value="modify2", method=RequestMethod.POST)
+	public ModelAndView modify2(
+			@RequestParam("userNo")int userNo,
+			@RequestParam("nName")String nName){
+		
+		UserBean ubean=daoInter.selectunoUser(userNo);
+		ubean.setName(nName);
+		
+		ModelAndView andView=new ModelAndView("modify");
+		andView.addObject("ubean", ubean);
+		return andView;
+	}
+	
+	@RequestMapping(value="modifySuccess", method=RequestMethod.POST)
+	public String modifySuccess(
+			UserBean bean,
+			HttpSession session) {
+		
+		
+		boolean b=daoInter.updateUinfo(bean);
+		session.setAttribute("namekey",bean.getName());
+		if(b) {
+			return "modifySuccess";
+		}else {
+			return "err";
+		}
 	}
 }
