@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +26,11 @@ textarea {
 <script>
 window.onload=function(){
 	
-	<%//로그인된 아이디가 있는지 확인
-String name = (String) session.getAttribute("namekey");%>
+<%
+	//로그인된 아이디가 있는지 확인
+	String name = (String) session.getAttribute("namekey");
+	int userNo = (Integer) session.getAttribute("userNo");
+%>
 
 	let btnCom=document.querySelector("#btnCom");
 	btnCom.addEventListener("click",move);
@@ -65,9 +69,11 @@ String name = (String) session.getAttribute("namekey");%>
 			return;
 		}
 		
-		
+		setTimeout(function(){
+			frm.submit()
+		},1500)
 
-		frm.submit()
+		
 	}
 </script>
 </head>
@@ -101,7 +107,27 @@ String name = (String) session.getAttribute("namekey");%>
 
 	<!-- 목록 버튼 -->
 	<button onclick="location.href='studyboard?userNo=${userNo}&studyNo=${studyNo }&page=1'">목록</button>
+
 	
+	<!-- 수정 -->
+	<c:set var="u" value="${pdata.uNo }" /> 
+	<c:set var="s" value="${userNo }" /> 
+	<c:choose>
+		<c:when test="${u eq s}">
+			<a href ="updatePost?postNo=${pdata.postNo }&userNo=${userNo }&studyNo=${pdata.sNo }">수정</a>
+		</c:when>
+	</c:choose>
+	
+	
+	<!-- 삭제 -->
+	<c:set var="manager" value="${manager }" /> 
+	<c:set var="u" value="${pdata.uNo }" /> 
+	<c:set var="s" value="${userNo }" /> 
+	<c:choose>
+		<c:when test="${manager or u eq s}">
+		 <a href ="deletePost?postNo=${pdata.postNo }&userNo=${userNo }&studyNo=${pdata.sNo }&page=1" onclick="return confirm('삭제된 게시글은 복구가 불가합니다.\n정말로 삭제하시겠습니까?');">삭제</a>
+		 </c:when>
+	</c:choose>
 	
 	
 

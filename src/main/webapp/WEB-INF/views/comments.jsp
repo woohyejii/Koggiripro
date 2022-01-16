@@ -34,7 +34,7 @@
 			<td><a href="postDetail?postNo=${tmp.postNo }&cpage=0&studyNo=${tmp.studyNo }&userNo=${ulist[status.index] }">${tlist[status.index] }</a> </td>
 			<td>${tmp.content } </td>
 			<td>${tmp.time } </td>
-			<!-- 
+			 <!-- 
 			<td>
 			 	<a href="deletecom?commentNo=${tmp.commentNo }&postNo=${tmp.postNo }&studyNo=${tmp.studyNo }&userNo=${userNo }">삭제</a>
 			</td>

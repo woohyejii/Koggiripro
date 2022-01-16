@@ -129,24 +129,24 @@ function checknowPwd1(){
 function checknewPwd(){
 	
 	
-	if(frm.password.value===""){
-	      alert("새 비밀번호를 입력해 주세요");
-	      frm.password.focus();
-	      return;
-	   }
-	
-	if(document.querySelector("#password").value.length>document.querySelector("#password").size){
-	  	   alert("비밀번호를 20글자 이내로 입력해주세요");
-	  	      frm.password.focus();
-	  	      return;
-	   }
-	
-	if(frm.password.value!=document.querySelector("#password2").value){
-	      alert("비밀번호가 일치하지 않습니다");
-	      frm.password.focus();
-	      return;
-	   }
+	if(document.querySelector("#password2").value!="" || frm.password.value!=""){
+		if(document.querySelector("#password").value.length>document.querySelector("#password").size){
+		  	   alert("비밀번호를 20글자 이내로 입력해주세요");
+		  	      
+		  	      return;
+		   }
+		
+		if(frm.password.value!=document.querySelector("#password2").value){
+		      alert("비밀번호가 일치하지 않습니다");
+		      
+		      return;
+		   }
 
+	   }else{
+		   frm.password.value=document.querySelector("#checkpwd").value
+	   }
+	
+	
 	frm.submit();
 	   
 }
@@ -228,11 +228,11 @@ function inputName(nName){
 		</tr>
 		<tr>
 			<td>현재 비밀번호</td>
-			<td><input type="password" class="checkpwd"></td>
+			<td><input type="password" class="checkpwd" id="checkpwd"></td>
 		</tr>
 		<tr>
 			<td>새 비밀번호</td>
-			<td><input type="password"  name="password" id="password"></td>
+			<td><input type="password" name="password" id="password"></td>
 		</tr>
 		<tr>
 			<td>새 비밀번호 확인</td>

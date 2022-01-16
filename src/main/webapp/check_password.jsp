@@ -65,7 +65,7 @@ function checkData(){
 비밀번호를 한번 더 확인해 주세요.
 <br>
 <br>
-<form action="modify" method="get" name="frm">
+<form action="modify" method="get" name="frm" onsubmit="return false">
 <input type="hidden" name="userNo" class="userNo" value=<%=userNo %>>
 비밀번호 <input type="password" class="password">
 <input type="button" value="확인" id="btnPwd">

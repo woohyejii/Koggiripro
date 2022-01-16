@@ -47,7 +47,7 @@ function member1(){
 			let list = Data.datalist;
 			console.log(list);
 			$(list).each(function(idx,obj){
-				let href = 'studyboard?userNo=${userNo}&studyNo='+obj.studyNo+'&page=1'+"'"+'"';
+				let href = 'studyboard?studyNo='+obj.studyNo+'&page=1'+"'"+'"';
 				str+="<button onclick="+ '"location.href=' +"'"+href+">"+obj.studyName+obj.language+obj.nowPeopleNum+"/"+obj.maxPeopleNum+"</button><br/>";
 				console.log(str);
 				count++;				
@@ -81,7 +81,7 @@ function member1(){
 				
 				console.log(list);
 				$(list).each(function(idx,obj){
-					let href = 'studyboard?userNo=${userNo}&studyNo='+obj.studyNo+'&page=1'+"'"+'"';	
+					let href = 'studyboard?studyNo='+obj.studyNo+'&page=1'+"'"+'"';	
 					str+="<button onclick="+ '"location.href=' +"'"+href+">"+obj.studyName+obj.language+obj.nowPeopleNum+"/"+obj.maxPeopleNum+"</button><br/>";
 					console.log(str);
 					count++;				

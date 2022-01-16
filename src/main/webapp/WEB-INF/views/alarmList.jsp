@@ -16,11 +16,12 @@ window.onload = function() {
 	
 		if (document.querySelector("#alert")===null){
 			console.log("True");
-			document.getElementById("body").innerHTML=
+			document.getElementById("body").innerHTML+=
 				//여기에 이미지 넣어주시고 가운데 정렬해주세요!!!
 				`새로운 알림이 없습니다. 
 			<br>도착한 알림이 없습니다.<br>
-			<button onclick="location.href='index.jsp'">메인페이지로 이동하기</button>`;
+			<br><button onclick="location.href='index.jsp'">메인페이지로 이동하기</button>
+			<br><br><br><br>`;
 		}else{
 			console.log("False");
 		}
@@ -31,6 +32,8 @@ window.onload = function() {
 </head>
 <body>
 <div id="body">
+
+</div>
 	<c:forEach var="tmp" items="${dto }">
 		<c:set var="click" value="${tmp.click }" scope="session"/> 
 		<c:choose>
@@ -46,8 +49,8 @@ window.onload = function() {
 			</c:otherwise>
 		</c:choose>
 	</c:forEach>
-	<button onclick="location.href='index.jsp'">메인페이지로 이동하기</button>
-</div>
+	<a href='index.jsp'>메인페이지로 이동하기</a>
+
 
 </body>
 </html>

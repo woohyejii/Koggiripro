@@ -3,6 +3,7 @@ package pack.controller;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,8 +27,14 @@ public class BoardListController {
 	
 	
 	@RequestMapping(value = "studyboard", method = RequestMethod.GET)
-	public ModelAndView process(@RequestParam("userNo") int userNo, @RequestParam("studyNo") String studyNo, @RequestParam("page") String page) { 
+	public ModelAndView process(
+			@RequestParam("studyNo") String studyNo, 
+			@RequestParam("page") String page,
+			HttpSession session) { 
 		ModelAndView andView = new ModelAndView();
+		
+		int userNo=(Integer)session.getAttribute("userNo");
+		
 		andView.addObject("studyNo",studyNo);
 		andView.addObject("userNo",userNo);
 		int p = 0;

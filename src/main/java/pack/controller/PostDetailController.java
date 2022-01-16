@@ -107,7 +107,7 @@ public class PostDetailController {
 		view.addObject("postNo",postNo);
 		view.addObject("studyNo", studyNo);
 		view.addObject("name", name);
-		view.addObject("userNo", userNo);
+		//view.addObject("userNo", userNo);
 		return view;
 		
 	}

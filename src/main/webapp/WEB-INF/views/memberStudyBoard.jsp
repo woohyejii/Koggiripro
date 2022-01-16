@@ -114,7 +114,7 @@ margin: 50px;
 							<c:when test="${u eq s}">
 								<%-- <button
 									onclick="location.href='updatePost?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${studyNo }'">수정</button> --%>
-								<a href ="updatePost?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${studyNo }" class= "section-subheading text-muted">수정</a>
+								<a href ="updatePost?postNo=${tmp.postNo }&studyNo=${studyNo }" class= "section-subheading text-muted">수정</a>
 							</c:when>
 						</c:choose></td>
 
@@ -155,7 +155,7 @@ margin: 50px;
 		
 	</div>
 	<div style="float:left ;margin:50px">
-	<button onclick="location.href='write?userNo=${userNo}&studyNo=${studyNo }'">새글 작성</button>
+	<button onclick="location.href='write?studyNo=${studyNo }'">새글 작성</button>
 </div>
 </section> 
 

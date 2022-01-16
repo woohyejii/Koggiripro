@@ -2,6 +2,8 @@ package pack.controller;
 
 import java.io.InputStream;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +27,11 @@ public class UpdatePostController {
 	@RequestMapping(value = "updatePost", method = RequestMethod.GET)
 	public ModelAndView updatePost(
 			@RequestParam("postNo") int postNo, 
-			@RequestParam("userNo") int userNo,
-			@RequestParam("studyNo") int studyNo) {
+			@RequestParam("studyNo") int studyNo,
+			HttpSession session) {
 		
 		StudyMemberDto smdto=new StudyMemberDto();
+		int userNo=(Integer)session.getAttribute("userNo");
 		smdto.setStudyNo(studyNo);
 		smdto.setUserNo(userNo);
 		int smno=sminter.selectStudymemberno(smdto);
