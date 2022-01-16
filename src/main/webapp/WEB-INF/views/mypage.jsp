@@ -12,7 +12,7 @@
 </head>
 <body>
 <%
-		//로그인된 아이디가 있는지 확인
+	//로그인된 아이디가 있는지 확인
 	String name = (String) session.getAttribute("namekey");
 	int userNo = (Integer) session.getAttribute("userNo");
 %>

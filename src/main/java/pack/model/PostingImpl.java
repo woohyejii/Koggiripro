@@ -1,5 +1,7 @@
 package pack.model;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,12 @@ public class PostingImpl extends SqlSessionDaoSupport implements PostingInter{
 			return true;
 		else
 			return false;
+	}
+
+	@Override
+	public ArrayList<PostDto> selectNopost(int uNo) {
+			if(getSqlSession().selectList("selectNopost",uNo)==null)return null;
+		return (ArrayList)getSqlSession().selectList("selectNopost",uNo);
 	}
 
 }

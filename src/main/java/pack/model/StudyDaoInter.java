@@ -33,4 +33,6 @@ public interface StudyDaoInter {
 	
 	boolean downNowpnum(int studyNo);
 	boolean updateStudyinfo(StudyDto studyDto);
+	
+	String selectSnoName(int studyNo);
 }

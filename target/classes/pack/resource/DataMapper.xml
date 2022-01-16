@@ -300,6 +300,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select max(studyNo) as studyNo from studyInfo where manager_userno = #{manager_userNo}
 	</select>
 	
+	<!-- 스터디번호로 스터디명 가져오기 -->
+	<select id="selectSnoName" parameterType="integer" resultType="string">
+		select studyName from studyInfo where studyNo=#{studyNo}
+	</select>
+	
 	<!-- 스터디번호와 유저번호로 스터디장 바꾸기 -->
 	<update id="upStudyManage" parameterType="StudyDto">
 		update studyInfo set manager_userno=#{manager_userNo} where studyNo=#{studyNo}
@@ -369,7 +374,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from postINfo where postNo = #{postNo} and sNo=#{sNo}
 	</delete>
 	
-	
+	<!-- 유저 번호로 작성한 게시글 모두 보기 -->
+	<select id="selectNopost" parameterType="integer" resultType="PostDto">
+		select * from postINfo where uNo=#{uNo} order by sNo asc
+	</select>
 	
 	<select id="selectPostUserNo" parameterType="integer" resultType="integer">
 		select userNo from postinfo join studyMemberInfo using(studyMemberno) where postNo = #{postNo}

@@ -153,6 +153,12 @@ public class StudyDaoImpl extends SqlSessionDaoSupport implements StudyDaoInter 
 			return false;
 	}
 
+	@Override
+	public String selectSnoName(int studyNo) {
+		
+		return getSqlSession().selectOne("selectSnoName",studyNo);
+	}
+
 	
 }
 
