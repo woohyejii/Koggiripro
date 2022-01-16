@@ -10,11 +10,14 @@ public interface UserDaoInter {
 	int currentMaxnum();
 	boolean useId(UserBean bean);
 	boolean useName(UserBean bean);
+	boolean updateUinfo(UserBean bean);
 	
 	String selectName(UserBean bean);
 	UserBean selectidUser(String id);
 	UserBean selectNameUser(String name);
 	String selectUsernoName(int userNo);
+	
+	UserBean selectunoUser(int userNo);
 	
 	String selectNoPwd(int userNo);
 	int selectNameUserno(String name);

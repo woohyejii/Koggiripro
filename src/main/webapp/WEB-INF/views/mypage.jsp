@@ -10,9 +10,16 @@
 <title>mypage</title>
 </head>
 <body>
-
+<%
+		//로그인된 아이디가 있는지 확인
+	String name = (String) session.getAttribute("namekey");
+	int userNo = (Integer) session.getAttribute("userNo");
+%>
+<b><%=name %></b> 님 환영합니다.	
 <h2><a href="mypage?userNo=${userNo}">MY PAGE</a></h2>
 마이페이지
+
+
 <hr />
 <div>
  
@@ -27,7 +34,7 @@ Study
 <div>
  
 Profile
-<br><a href="mystudyinfo?userNo=${userNo}">회원 정보</a>
+<br><a href="check_password.jsp">회원 정보</a>
 <br>회원님의 개인정보를
 <br>관리하는 공간입니다.
   
