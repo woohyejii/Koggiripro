@@ -5,6 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>게시글 작성</title>
+<%
+	//로그인된 아이디가 있는지 확인
+	String name = (String) session.getAttribute("namekey");
+	int userNo = (Integer) session.getAttribute("userNo");
+%>
+<script type="text/javascript">
+window.onpageshow = function(event) {
+	   if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+	   // Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
+	   location.href="studyboard?userNo=<%=userNo%>&studyNo=${studyNo }&page=1"
+	   
+	   
+	   }
+	}
+	
+</script>
 <script type="text/javascript">
 
 	window.onload=function(){

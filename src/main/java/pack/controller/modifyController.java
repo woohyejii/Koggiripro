@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import pack.model.CommDaoInter;
+import pack.model.CommentDto;
 import pack.model.UserDaoInter;
 
 @Controller
@@ -20,6 +22,9 @@ public class modifyController {
 	
 	@Autowired
 	private UserDaoInter daoInter;
+	
+	@Autowired
+	private CommDaoInter cdinter;
 
 	
 	@RequestMapping(value="checkPwd5", method=RequestMethod.POST)
@@ -69,6 +74,8 @@ public class modifyController {
 		UserBean ubean=daoInter.selectunoUser(userNo);
 		ubean.setName(nName);
 		
+		
+		
 		ModelAndView andView=new ModelAndView("modify");
 		andView.addObject("ubean", ubean);
 		return andView;
@@ -79,6 +86,20 @@ public class modifyController {
 			UserBean bean,
 			HttpSession session) {
 		
+		String name = daoInter.selectUsernoName(bean.getUserNo());
+		System.out.println("name 값 : "+name+ "bean.name 값 : "+bean.name);
+		
+		CommentDto cdto=new CommentDto();
+		cdto.setContent(bean.name);
+		cdto.setUserName(name);
+		int b1=cdinter.selectNamecom(name);
+		System.out.println("b1 결과값 : "+b1);
+		
+		if(b1>0) {
+			cdinter.updateNamecom(cdto);
+		}else {
+			
+		}
 		
 		boolean b=daoInter.updateUinfo(bean);
 		session.setAttribute("namekey",bean.getName());
@@ -93,6 +114,7 @@ public class modifyController {
 	@ResponseBody
 	public Map<String,String> deleteUser(@RequestParam("userNo")int userNo){
 		boolean b=daoInter.deleteUser(userNo);
+		
 		
 		Map<String, String> map=new HashMap<String, String>();
 		
