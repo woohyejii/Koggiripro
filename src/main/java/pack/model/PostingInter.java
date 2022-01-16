@@ -10,4 +10,7 @@ public interface PostingInter {
 	boolean updatePost(PostDto dto);
 	ArrayList<PostDto> selectNopost(int uNo);
 	
+	String selectNosTitle(PostDto dto);
+	int selectNosUno(PostDto dto);
+	
 }

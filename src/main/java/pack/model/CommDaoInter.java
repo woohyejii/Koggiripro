@@ -14,4 +14,6 @@ public interface CommDaoInter {
 	int selectComcount(CommentDto dto);
 	
 	int selectNamecom(String userName);
+	
+	ArrayList<CommentDto> selectUsercom(String userName);
 }

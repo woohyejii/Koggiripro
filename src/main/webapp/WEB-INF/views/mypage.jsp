@@ -50,7 +50,18 @@ Board
 <br>관리하는 공간입니다.
   
 </div>
+
 <br><br>
+<div>
+ 
+Comments
+<br><a href="comments?userNo=${userNo }">댓글 관리</a>
+<br>회원님이 작성하신 댓글을
+<br>관리하는 공간입니다.
+  
+</div>
+<br><br>
+
 
 
 <!--<button id="managerStudy" onclick = "location.href='mypageNew?userNo=${userNo}&memberOrManager=manager'">가입 중인 스터디</button>-->

@@ -198,7 +198,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 	update PostInfo set views=views + 1 where postNo=#{postNo} and studyMemberNo=#{studyMemberNo}
 	 </update>
 
-
+	<!-- 스터디번호와 postNo로 글제목 찾기 -->
+	<select id="selectNosTitle" parameterType="PostDto" resultType="string">
+		select title from PostInfo where postNo=#{postNo} and sNo=#{sNo}
+	</select>
+	
+	<!-- 게시글의 작성자 찾기 -->
+	<select id="selectNosUno" parameterType="PostDto" resultType="integer" >
+		select uNo from PostInfo where postNo=#{postNo} and sNo=#{sNo}
+	</select>
    
     <select id="currentMaxnum" parameterType="integer" resultType="integer">
        select max(postno) from postinfo p join studymemberinfo s on s.studymemberno = p.studymemberno where s.studyno = ${studyNo}
@@ -236,6 +244,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <!-- 댓글 보기 -->
     <select id="selectCom" parameterType="CommentDto" resultType="CommentDto">
        select * from comments where postNo=#{postNo} and studyNo=#{studyNo} order by commentNo desc
+    </select>
+    
+    <!-- 유저별 댓글 보기 -->
+    <select id="selectUsercom" parameterType="string" resultType="CommentDto">
+    	select * from comments where userName=#{userName }
     </select>
     
     <!-- 게시글 댓글 max num 구하기 -->

@@ -90,4 +90,10 @@ public class CommDaoImpl extends SqlSessionDaoSupport implements CommDaoInter{
 		return getSqlSession().selectOne("selectNamecom",userName);
 	}
 
+	@Override
+	public ArrayList<CommentDto> selectUsercom(String userName) {
+		
+		return (ArrayList)getSqlSession().selectList("selectUsercom",userName);
+	}
+
 }

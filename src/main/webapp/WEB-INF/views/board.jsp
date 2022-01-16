@@ -19,7 +19,7 @@
 <table border="1">
 <thead>
 	<tr>
-		<th>스터디 번호</th>
+		<th>스터디</th>
 		<th>글 번호</th>
 		<th>글 제목</th>
 		<th>작성자</th>

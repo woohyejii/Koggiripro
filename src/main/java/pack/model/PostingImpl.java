@@ -45,4 +45,14 @@ public class PostingImpl extends SqlSessionDaoSupport implements PostingInter{
 		return (ArrayList)getSqlSession().selectList("selectNopost",uNo);
 	}
 
+	@Override
+	public String selectNosTitle(PostDto dto) {
+		return getSqlSession().selectOne("selectNosTitle", dto);
+	}
+
+	@Override
+	public int selectNosUno(PostDto dto) {
+		return getSqlSession().selectOne("selectNosUno", dto);
+	}
+
 }
