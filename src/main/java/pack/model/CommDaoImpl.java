@@ -73,4 +73,21 @@ public class CommDaoImpl extends SqlSessionDaoSupport implements CommDaoInter{
 			return false;
 	}
 
+	@Override
+	public boolean updateNamecom(CommentDto dto) {
+		int i=getSqlSession().update("updateNamecom",dto);
+		
+		if(i>0)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public int selectNamecom(String userName) {
+		
+		if(getSqlSession().selectOne("selectNamecom",userName)==null) return 0;
+		return getSqlSession().selectOne("selectNamecom",userName);
+	}
+
 }
