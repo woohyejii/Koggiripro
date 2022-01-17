@@ -116,7 +116,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 회원가입 -->
 	<insert id="insertUser" parameterType="UserBean">
-		insert into userInfo values(#{userNo },#{id }, #{password }, #{name })
+		insert into userInfo values(#{userNo },#{id }, #{password }, #{name }, #{answer }, #{hint })
 	</insert>
 	
 	<!-- 아이디로 닉네임 찾기 -->
