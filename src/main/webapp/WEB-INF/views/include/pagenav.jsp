@@ -35,7 +35,7 @@
             전체보기
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="studyinfo.jsp">STUDY</a></li>
+            <li><a class="dropdown-item" href="home.jsp">STUDY</a></li>
             <li><a class="dropdown-item" href="info.jsp">채용정보</a></li>
             <li><a class="dropdown-item" href="faq.jsp">FAQ</a></li>
           </ul>
