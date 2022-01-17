@@ -56,6 +56,7 @@ window.onload=function(){
    
    id=0;
    name=0;
+   answer=0;
    
    let btnIns=document.querySelector("#btnIns");
    btnIns.addEventListener("click", checkData);
@@ -76,6 +77,7 @@ window.onload=function(){
    $("#name").keyup(function(){
 	   name=0;
    })
+   
    
 }
 
@@ -153,14 +155,14 @@ function checkName(){
 function checkData(){
    
    if(frm.id.value===""){
-      alert("아이디를 입력하세요~");
+      alert("아이디를 입력하세요");
       frm.id.focus();
       return;
    }
    
    
    if(frm.password.value===""){
-      alert("비밀번호를 입력하세요~");
+      alert("비밀번호를 입력하세요");
       frm.password.focus();
       return;
    }
@@ -172,17 +174,29 @@ function checkData(){
    }
    
    if(frm.password.value!=document.querySelector("#password2").value){
-	      alert("비밀번호가 일치하지 않습니다!");
+	      alert("비밀번호가 일치하지 않습니다");
 	      frm.password2.focus();
 	      return;
 	}
    
    if(frm.name.value===""){
-      alert("닉네임을 입력하세요~");
+      alert("닉네임을 입력하세요");
       frm.name.focus();
       return;
    }
    
+   if(frm.answer.value===""){
+	   alert("비밀번호 확인 답변 항목은 필수 입력값입니다.");
+	   frm.answer.focus();
+	   return;
+   }
+   
+   if(document.querySelector("#answer").value.length>20){
+  	   alert("비밀번호 확인 답변을 20글자 이내로 입력해주세요");
+  	      frm.answer.focus();
+  	      return;
+   }
+  
 
    if(id===0){
       alert("아이디 중복확인을 해주세요.");
@@ -237,6 +251,28 @@ function checkData(){
       <button class="w-100 btn btn-lg btn-secondary" type="button"
             value="회원가입" id="btnName">중복확인</button>
    </div>
+   <div>
+   		<label>비밀번호 확인 질문</label>
+	   	<select name="hint">
+	   		<option value="hint_01">자신의 인생 좌우명은?</option>
+	   		<option value="hint_02">자신의 보물 제1호는?</option>
+	   		<option value="hint_03">가장 기억에 남는 선생님 성함은?</option>
+	   		<option value="hint_04">받았던 선물 중 기억에 남는 독특한 선물은?</option>
+	   		<option value="hint_05">유년시절 가장 생각나는 친구 이름은?</option>
+	   		<option value="hint_06">인상 깊게 읽은 책 이름은?</option>
+	   		<option value="hint_07">자신이 두번째로 존경하는 인물은?</option>
+	   		<option value="hint_08">친구들에게 공개하지 않은 어릴 적 별명이 있다면?</option>
+	   		<option value="hint_09">다시 태어나면 되고 싶은 것은?</option>
+	   		<option value="hint_10">내가 좋아하는 캐릭터는?</option>
+	   	</select>
+	</div>
+	<div>
+		<label>비밀번호 확인 답변</label>
+	   	<input type="text" name="answer" id="answer">
+    </div>
+   
+   
+   
    <br>
       <button class="w-100 btn btn-lg btn-primary" type="button"
             value="가입하기" id="btnIns">가입하기</button>

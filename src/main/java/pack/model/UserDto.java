@@ -2,9 +2,21 @@ package pack.model;
 
 public class UserDto {
 	int userNo;
-	String id, password, name;
+	String id, password, name, answer, hint;
 	
 	
+	public String getHint() {
+		return hint;
+	}
+	public void setHint(String hint) {
+		this.hint = hint;
+	}
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
 	public int getUserNo() {
 		return userNo;
 	}

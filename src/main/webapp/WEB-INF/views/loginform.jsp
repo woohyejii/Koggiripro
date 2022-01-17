@@ -105,7 +105,11 @@ function enterkey() {
 
 			<button class="w-100 btn btn-lg btn-primary" type="button"
 				value="로그인" id="btnlog">로그인</button>
-				<a href="signup">회원가입</a>
+				
+				
+				
+				<a href="find_id">아이디찾기</a> | 비밀번호찾기 | <a href="signup">회원가입</a>
+				
 				
 			<p class="mt-5 mb-3 text-muted">&copy; 2022</p>
 		</form>

@@ -56,7 +56,7 @@ public class WithdrawalController {
 		boolean result3=cdinter.deleteMemCom(cdto);
 		
 		
-		if(result && result2 && result3) { 
+		if(result && result2) { 
 			System.out.println("체크");
 			return "redirect:/mypage?userNo="+bean.getUserNo();
 			//return "home";

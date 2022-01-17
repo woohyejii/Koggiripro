@@ -89,7 +89,15 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDaoInter{
 	@Override
 	public UserBean selectNameUser(String name) {
 		// 닉네임으로 유저 정보 찾기
+		if(getSqlSession().selectOne("selectNameUser",name)==null)return null;
 		return getSqlSession().selectOne("selectNameUser",name);
+	}
+	
+	@Override
+	public boolean selectNameUser2(String name) {
+		// 닉네임으로 유저 정보 찾기
+		if(getSqlSession().selectOne("selectNameUser",name)==null)return false;
+		return true;
 	}
 
 
