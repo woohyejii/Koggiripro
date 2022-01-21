@@ -108,7 +108,7 @@ function enterkey() {
 				
 				
 				
-				<a href="find_id">아이디찾기</a> | 비밀번호찾기 | <a href="signup">회원가입</a>
+				<a href="find_id">아이디찾기</a> | <a href="find_pwd">비밀번호찾기</a> | <a href="signup">회원가입</a>
 				
 				
 			<p class="mt-5 mb-3 text-muted">&copy; 2022</p>

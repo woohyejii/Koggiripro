@@ -147,6 +147,20 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDaoInter{
 			return false;
 		}
 	}
+
+
+	@Override
+	public String selectidhint(String id) {
+		if (getSqlSession().selectOne("selectidhint", id)==null) return "";
+		return getSqlSession().selectOne("selectidhint", id);
+	}
+
+
+	@Override
+	public String selectidanswer(String id) {
+		if(getSqlSession().selectOne("selectidanswer", id)==null) return "";
+		return getSqlSession().selectOne("selectidanswer", id);
+	}
 	
 	
 	

@@ -47,7 +47,7 @@ function chkName2(){
 <body>
 <h2>아이디 찾기 폼</h2>
 <form action="find_id" method="post" name="frm" onsubmit="return false">
-닉네임으로 찾기 <input type="text" name="name" class="name"> ${msg }
+닉네임으로 찾기 <input type="text" name="name" class="name">
 <br>
 
 <input type="button" value="확인" id="chkName">

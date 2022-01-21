@@ -129,6 +129,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from userInfo where id=#{id}
 	</select>
 	
+	<!-- 아이디로 힌트 찾기 -->
+	<select id="selectidhint" parameterType="string" resultType="string">
+		select hint from userInfo where id=#{id}
+	</select>
+	
+	<!-- 아이디로 힌트답 찾기 -->
+	<select id="selectidanswer" parameterType="string" resultType="string">
+		select answer from userInfo where id=#{id}
+	</select>
+	
 	<!-- userNo로 유저 정보 찾기 -->
 	<select id="selectunoUser" parameterType="integer" resultType="UserBean">
 		select * from userInfo where userNo=#{userNo}

@@ -17,6 +17,8 @@ public interface UserDaoInter {
 	UserBean selectidUser(String id);
 	UserBean selectNameUser(String name);
 	boolean selectNameUser2(String name);
+	String selectidhint(String id);
+	String selectidanswer(String id);
 	
 	String selectUsernoName(int userNo);
 	
