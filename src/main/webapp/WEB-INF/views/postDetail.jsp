@@ -167,7 +167,7 @@ window.onload=function(){
 				<c:choose>
 					<c:when test="${c.userName ==namekey }">
 						<td width="35" class="deletecom"><a
-							href="deletecom?commentNo=${c.commentNo }&postNo=${c.postNo }&studyNo=${studyNo }&userNo=${userNo }">삭제</a></td>
+							href="deletecom?commentNo=${c.commentNo }&postNo=${c.postNo }&studyNo=${studyNo }">삭제</a></td>
 					</c:when>
 					<c:otherwise>
 						<td width="35"></td>
@@ -186,7 +186,7 @@ window.onload=function(){
 						<b><u>${cpsu }</u></b>
 					</c:if>
 					<c:if test="${cpsu != cpage }">
-						<a href="postDetail?postNo=${postNo }&cpage=${cpsu}&studyNo=${studyNo }&userNo=${userNo }">${cpsu}</a>
+						<a href="postDetail?postNo=${postNo }&cpage=${cpsu}&studyNo=${studyNo }">${cpsu}</a>
 					</c:if>
 				</c:forEach></td>
 		</tr>

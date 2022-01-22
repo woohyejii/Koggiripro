@@ -39,7 +39,7 @@ public class CommentController {
 		
 		if(b) {
 			
-			return "redirect:/postDetail?postNo="+postNo+"&cpage=1&studyNo="+studyNo+"&userNo="+userNo;
+			return "redirect:/postDetail?postNo="+postNo+"&cpage=1&studyNo="+studyNo;
 		}
 		else {
 			return "error2";
@@ -52,8 +52,7 @@ public class CommentController {
 	public String deletecom(
 			@RequestParam("commentNo")int commentNo,
 			@RequestParam("postNo")int postNo,
-			@RequestParam("studyNo")int studyNo,
-			@RequestParam("userNo")int userNo) {
+			@RequestParam("studyNo")int studyNo) {
 		CommentDto dto=new CommentDto();
 		dto.setCommentNo(commentNo);
 		dto.setPostNo(postNo);
@@ -63,7 +62,7 @@ public class CommentController {
 		
 		if(b) {
 			
-			return "redirect:/postDetail?postNo="+postNo+"&cpage=1&studyNo="+studyNo+"&userNo="+userNo;
+			return "redirect:/postDetail?postNo="+postNo+"&cpage=1&studyNo="+studyNo;
 		}
 		else {
 			return "error2";
