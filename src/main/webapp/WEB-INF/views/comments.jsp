@@ -23,28 +23,28 @@
 		<th>글 제목</th>
 		<th>댓글</th>
 		<th>작성일</th>
-		<!-- <th>삭제</th> -->
+		<th>삭제</th>
 	</tr>
 </thead>
 <tbody>
 <!-- <div id="showList"> -->
 	<c:forEach var="tmp" items="${clist}" varStatus="status">
 		<tr>
-			<td>${slist[status.index] }</td>
-			<td><a href="postDetail?postNo=${tmp.postNo }&cpage=0&studyNo=${tmp.studyNo }&userNo=${ulist[status.index] }">${tlist[status.index] }</a> </td>
+			<td><a href="studyboard?studyNo=${tmp.studyNo }&page=1">${slist[status.index] }</a></td>
+			<td><a href="postDetail?postNo=${tmp.postNo }&cpage=0&studyNo=${tmp.studyNo }">${tlist[status.index] }</a> </td>
 			<td>${tmp.content } </td>
 			<td>${tmp.time } </td>
-			 <!-- 
+ 
 			<td>
 			 	<a href="deletecom?commentNo=${tmp.commentNo }&postNo=${tmp.postNo }&studyNo=${tmp.studyNo }&userNo=${userNo }">삭제</a>
 			</td>
-			 -->
+
 
 		</tr>
 	</c:forEach>
 	
 	<tr style="text-align: center;">
-			<td colspan="4"><c:forEach var="cpsu" begin="1"
+			<td colspan="5"><c:forEach var="cpsu" begin="1"
 					end="${cpageSu }">
 					<c:if test="${cpsu == cpage }">
 						<b><u>${cpsu }</u></b>

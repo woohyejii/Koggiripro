@@ -11,8 +11,16 @@
 </head>
 <body>
 
-<h2><a href="mypage?userNo=${userNo}">MY PAGE</a></h2>
+<h2><a href="javascript:void(0);" onclick="javascript:frm4.submit();">MY PAGE</a></h2>
+
 마이페이지
+
+<!-- 마이페이지 이동 -->
+<form action="mypage" method="post" name="frm4">
+<input type="hidden" name="userNo" value=${userNo}>
+</form>
+
+
 <hr />
 <h5>스터디 조회</h5>
 <!--<button id="managerStudy" onclick = "location.href='mypageNew?userNo=${userNo}&memberOrManager=manager'">가입 중인 스터디</button>-->

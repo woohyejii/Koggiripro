@@ -17,9 +17,14 @@
 	int userNo = (Integer) session.getAttribute("userNo");
 %>
 <b><%=name %></b> 님 환영합니다.	
-<h2><a href="mypage?userNo=${userNo}">MY PAGE</a></h2>
+<h2><a href="javascript:void(0);" onclick="javascript:frm4.submit();">MY PAGE</a></h2>
+
 마이페이지
 
+<!-- 마이페이지 이동 -->
+<form action="mypage" method="post" name="frm4">
+<input type="hidden" name="userNo" value=${userNo}>
+</form>
 
 <hr />
 <div>

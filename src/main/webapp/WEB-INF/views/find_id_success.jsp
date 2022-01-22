@@ -13,5 +13,7 @@ ${name } 회원님의 아이디는
 <br>
 입니다.
 
+<br>
+<a href="index.jsp">메인 페이지로 이동</a>
 </body>
 </html>
