@@ -23,7 +23,7 @@
 		<th>글 제목</th>
 		<th>댓글</th>
 		<th>작성일</th>
-		<th>삭제</th>
+		<!-- <th>삭제</th> -->
 	</tr>
 </thead>
 <tbody>
@@ -35,16 +35,17 @@
 			<td>${tmp.content } </td>
 			<td>${tmp.time } </td>
  
+ 			<!-- 
 			<td>
 			 	<a href="deletecom?commentNo=${tmp.commentNo }&postNo=${tmp.postNo }&studyNo=${tmp.studyNo }&userNo=${userNo }">삭제</a>
 			</td>
-
+			 -->
 
 		</tr>
 	</c:forEach>
 	
 	<tr style="text-align: center;">
-			<td colspan="5"><c:forEach var="cpsu" begin="1"
+			<td colspan="4"><c:forEach var="cpsu" begin="1"
 					end="${cpageSu }">
 					<c:if test="${cpsu == cpage }">
 						<b><u>${cpsu }</u></b>

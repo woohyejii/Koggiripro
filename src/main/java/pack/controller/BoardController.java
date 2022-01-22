@@ -53,7 +53,7 @@ public class BoardController {
 	}
 	
 	
-	@RequestMapping(value="board",method=RequestMethod.POST)
+	@RequestMapping(value="board")
 	public ModelAndView board(
 			@RequestParam("userNo") int userNo,
 			@RequestParam("cpage") int cpage) {

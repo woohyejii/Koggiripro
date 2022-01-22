@@ -47,7 +47,7 @@
 				</c:choose></td>
 
 			<td>
-			 	<a href ="deletePost?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${tmp.sNo }&page=1" onclick="return confirm('삭제된 게시글은 복구가 불가합니다.\n정말로 삭제하시겠습니까?');">삭제</a>
+			 	<a href ="deletePost2?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${tmp.sNo }" onclick="return confirm('삭제된 게시글은 복구가 불가합니다.\n정말로 삭제하시겠습니까?');">삭제</a>
 			</td>
 
 		</tr>

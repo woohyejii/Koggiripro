@@ -60,7 +60,7 @@ public class CommentsController {
 	
 	
 	
-	@RequestMapping(value="comments",method=RequestMethod.POST)
+	@RequestMapping(value="comments")
 	public ModelAndView board(
 			@RequestParam("userNo") int userNo,
 			@RequestParam("cpage") int cpage) {
