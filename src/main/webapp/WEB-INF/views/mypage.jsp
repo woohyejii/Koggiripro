@@ -58,6 +58,7 @@ Board
 <!-- 게시물 관리 페이지 이동 -->
 <form action="board" method="post" name="frm2">
 <input type="hidden" name="userNo" value=${userNo}>
+<input type="hidden" name="cpage" value=0>
 </form>
   
 </div>
@@ -73,6 +74,7 @@ Comments
 <!-- 댓글 관리 페이지 이동 -->
 <form action="comments" method="post" name="frm3">
 <input type="hidden" name="userNo" value=${userNo}>
+<input type="hidden" name="cpage" value=0>
 </form>
   
 </div>

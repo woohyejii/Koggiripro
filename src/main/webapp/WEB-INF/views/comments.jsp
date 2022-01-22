@@ -42,5 +42,24 @@
 
 		</tr>
 	</c:forEach>
+	
+	<tr style="text-align: center;">
+			<td colspan="4"><c:forEach var="cpsu" begin="1"
+					end="${cpageSu }">
+					<c:if test="${cpsu == cpage }">
+						<b><u>${cpsu }</u></b>
+					</c:if>
+					<c:if test="${cpsu != cpage }">
+						<a href="javascript:void(0);" onclick="javascript:frm.submit();">${cpsu}</a>
+						<!-- 게시물 관리 페이지 이동 -->
+						<form action="comments" method="post" name="frm" style="display:none">
+						<input type="hidden" name="userNo" value="${userNo}">
+						<input type="hidden" name="cpage" value="${cpsu}">
+						</form>
+					</c:if>
+				</c:forEach></td>
+		</tr>
+	</table>
+	
 </body>
 </html>
