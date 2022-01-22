@@ -48,7 +48,7 @@ margin: 50px;
 <div class="all-wrapper">
 <br/><br /><br />
 
-<h1 class="section-heading text-uppercase" style="text-align:center;"><a href="studyboard?userNo=${userNo}&studyNo=${studyNo}&page=1">스터디 게시판</a></h1>									
+<h1 class="section-heading text-uppercase" style="text-align:center;"><a href="studyboard?studyNo=${studyNo}&page=1">스터디 게시판</a></h1>									
 <br>
 &nbsp;&nbsp;
 
@@ -85,7 +85,7 @@ margin: 50px;
 <section>
 
 	<div class="tablewrapper" id="boardTable">
-	<a href="studyboard?userNo=${userNo }&studyNo=${studyNo }&page=1" class="section-subheading text-muted" style="display:inline-block; font-size:1.5em">[최근목록 보기]</a>&nbsp;
+	<a href="studyboard?&studyNo=${studyNo }&page=1" class="section-subheading text-muted" style="display:inline-block; font-size:1.5em">[최근목록 보기]</a>&nbsp;
 	<br />
 	<br />
 		<table>
@@ -105,7 +105,7 @@ margin: 50px;
 			<c:forEach var="tmp" items="${data}">
 				<tr>
 					<td>${tmp.postNo }</td>
-					<td><a href="postDetail?postNo=${tmp.postNo }&cpage=0&studyNo=${studyNo }&userNo=${tmp.userNo }" class= "section-subheading text-muted">${tmp.title }</a></td>
+					<td><a href="postDetail?postNo=${tmp.postNo }&cpage=0&studyNo=${studyNo }" class= "section-subheading text-muted">${tmp.title }</a></td>
 					<td>${tmp.name }</td>
 					<td>${tmp.postTime }</td>
 					<td>${tmp.views }</td>
