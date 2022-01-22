@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,7 +32,7 @@ public class CommentsController {
 	@Autowired
 	private PostingInter pinter;
 	
-	@RequestMapping(value="comments")
+	@RequestMapping(value="comments",method=RequestMethod.POST)
 	public ModelAndView board(@RequestParam("userNo") int userNo) {
 		ModelAndView andView=new ModelAndView();
 		String name=bdinter.selectName(userNo);

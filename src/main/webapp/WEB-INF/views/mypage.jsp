@@ -25,9 +25,14 @@
 <div>
  
 Study
-<br> <a href="mystudyinfo?userNo=${userNo}">스터디 조회</a>
+<br> <a href="javascript:void(0);" onclick="javascript:frm.submit();">스터디 조회</a>
 <br> 가입중인 스터디와 운영중인 스터디를
 <br>확인할 수 있습니다.
+
+<!-- 스터디 조회 페이지 이동 -->
+<form action="mystudyinfo" method="post" name="frm">
+<input type="hidden" name="userNo" value=${userNo}>
+</form>
 
   
 </div>
@@ -46,9 +51,14 @@ Profile
 <div>
  
 Board
-<br><a href="board?userNo=${userNo }">게시물 관리</a>
+<br><a href="javascript:void(0);" onclick="javascript:frm2.submit();">게시물 관리</a>
 <br>회원님이 작성하신 게시물을
 <br>관리하는 공간입니다.
+
+<!-- 게시물 관리 페이지 이동 -->
+<form action="board" method="post" name="frm2">
+<input type="hidden" name="userNo" value=${userNo}>
+</form>
   
 </div>
 
@@ -56,9 +66,14 @@ Board
 <div>
  
 Comments
-<br><a href="comments?userNo=${userNo }">댓글 관리</a>
+<br><a href="javascript:void(0);" onclick="javascript:frm3.submit();">댓글 관리</a>
 <br>회원님이 작성하신 댓글을
 <br>관리하는 공간입니다.
+
+<!-- 댓글 관리 페이지 이동 -->
+<form action="comments" method="post" name="frm3">
+<input type="hidden" name="userNo" value=${userNo}>
+</form>
   
 </div>
 <br><br>

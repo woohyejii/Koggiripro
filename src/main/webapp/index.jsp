@@ -53,13 +53,17 @@
                      <li class="nav-right"><a class="nav-link" href="signup">회원가입</a></li>
                   <%}else{ %>
                      <li class="nav-right"><a class="nav-link" href="alarmList?userNo=${userNo }">알림</a></li>
-                     <li class="nav-right"><a class="nav-link" href="mypage?userNo=${userNo }">마이페이지</a></li>
+                     <li class="nav-right"><a class="nav-link" href="javascript:void(0);" onclick="javascript:frm.submit();">마이페이지</a></li>
                      <li class="nav-right"><a class="nav-link" href="logout">로그아웃</a><br></li>
                   <%} %>
                     </ul>
                 </div>
             </div>
         </nav>
+		<!-- 마이페이지 이동 -->
+		<form action="mypage" method="post" name="frm">
+		<input type="hidden" name="userNo" value=${userNo}>
+		</form>
 
         <!-- Services-->
         <section class="page-section" id="#">
