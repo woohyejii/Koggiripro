@@ -60,12 +60,18 @@ public class PostDetailController {
 	public ModelAndView postdetailProcess(
 			@RequestParam("postNo")int postNo,
 			@RequestParam("cpage")int cpage,
-			@RequestParam("studyNo")int studyNo,
-			@RequestParam("userNo")int userNo) {
+			@RequestParam("studyNo")int studyNo) {
+		
+		PostDto pdto1=new PostDto();
+		
+		pdto1.setsNo(studyNo);
+		pdto1.setPostNo(postNo);
+		int userNo=postingInter.selectNosUno(pdto1);
 		
 		StudyMemberDto smdto=new StudyMemberDto();
 		smdto.setStudyNo(studyNo);
 		smdto.setUserNo(userNo);
+
 		
 		int studyMemberNo=smInter.selectStudymemberno(smdto);
 		

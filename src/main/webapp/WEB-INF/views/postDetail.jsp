@@ -106,7 +106,7 @@ window.onload=function(){
 	<form action="login" method="get" name="log"></form>
 
 	<!-- 목록 버튼 -->
-	<button onclick="location.href='studyboard?userNo=${userNo}&studyNo=${studyNo }&page=1'">목록</button>
+	<button onclick="location.href='studyboard?&studyNo=${studyNo }&page=1'">목록</button>
 
 	
 	<!-- 수정 -->
