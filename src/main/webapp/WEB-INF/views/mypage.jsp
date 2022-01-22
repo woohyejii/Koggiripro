@@ -28,6 +28,7 @@ Study
 <br> <a href="mystudyinfo?userNo=${userNo}">스터디 조회</a>
 <br> 가입중인 스터디와 운영중인 스터디를
 <br>확인할 수 있습니다.
+
   
 </div>
 <br><br>
