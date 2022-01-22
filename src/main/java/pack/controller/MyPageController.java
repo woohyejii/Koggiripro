@@ -23,7 +23,7 @@ public class MyPageController {
 	@Autowired
 	private	StudyDaoInter inter;
 	
-	@RequestMapping(value="mypage")
+	@RequestMapping(value="mypage",method=RequestMethod.POST)
 	public ModelAndView firstMyPage(@RequestParam("userNo") String userNo) {
 		ModelAndView andView = new ModelAndView();
 		andView.addObject("userNo",userNo);
@@ -32,7 +32,7 @@ public class MyPageController {
 	}
 	
 	
-	@RequestMapping(value="mystudyinfo")
+	@RequestMapping(value="mystudyinfo",method=RequestMethod.POST)
 	public ModelAndView mystudyinfo(@RequestParam("userNo") String userNo) {
 		ModelAndView andView = new ModelAndView();
 		andView.addObject("userNo",userNo);
