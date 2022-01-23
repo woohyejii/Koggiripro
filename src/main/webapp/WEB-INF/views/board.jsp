@@ -33,7 +33,7 @@
 <!-- <div id="showList"> -->
 	<c:forEach var="tmp" items="${plist}" varStatus="status">
 		<tr>
-			<td>${slist[status.index] }</td>
+			<td><a href="studyboard?studyNo=${tmp.sNo }&page=1">${slist[status.index] }</a></td>
 			<td>${tmp.postNo }</td>
 			<td><a href="postDetail?postNo=${tmp.postNo }&cpage=0&studyNo=${tmp.sNo }&userNo=${tmp.uNo }">${tmp.title }</a></td>
 			<td>${name }</td>
@@ -42,15 +42,36 @@
 			<td><c:set var="u" value="${tmp.uNo }" /> <c:set var="s"
 					value="${userNo }" /> <c:choose>
 					<c:when test="${u eq s}">
-						<a href ="updatePost?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${tmp.sNo }">수정</a>
+						<a href ="updatePost?postNo=${tmp.postNo }&studyNo=${tmp.sNo }">수정</a>
 					</c:when>
 				</c:choose></td>
 
 			<td>
-			 	<a href ="deletePost?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${studyNo }&page=1" class= "section-subheading text-muted" onclick="return confirm('삭제된 게시글은 복구가 불가합니다.\n정말로 삭제하시겠습니까?');">삭제</a>
+			 	<a href ="deletePost2?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${tmp.sNo }" onclick="return confirm('삭제된 게시글은 복구가 불가합니다.\n정말로 삭제하시겠습니까?');">삭제</a>
 			</td>
 
 		</tr>
 	</c:forEach>
+	
+
+		<tr style="text-align: center;">
+			<td colspan="8"><c:forEach var="cpsu" begin="1"
+					end="${cpageSu }">
+					<c:if test="${cpsu == cpage }">
+						<b><u>${cpsu }</u></b>
+					</c:if>
+					<c:if test="${cpsu != cpage }">
+						<a href="javascript:void(0);" onclick="javascript:frm.submit();">${cpsu}</a>
+						<!-- 게시물 관리 페이지 이동 -->
+						<form action="board" method="post" name="frm" style="display:none">
+						<input type="hidden" name="userNo" value="${userNo}">
+						<input type="hidden" name="cpage" value="${cpsu}">
+						</form>
+					</c:if>
+				</c:forEach></td>
+		</tr>
+	</table>
+	
+	
 </body>
 </html>

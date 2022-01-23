@@ -43,6 +43,8 @@
                         <li class="nav-item"><a class="nav-link" href="home">스터디찾기</a></li>
                         <li class="nav-item"><a class="nav-link" href="info.jsp">채용정보</a></li>
                         <li class="nav-item"><a class="nav-link" href="faq.jsp">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="studyCafeMap.jsp">지도</a></li>
+                        
                         <%
                   //로그인된 아이디가 있는지 확인
                   String name=(String)session.getAttribute("namekey");
