@@ -324,7 +324,7 @@ public class MyStudyController {
 			}
 			
 		}else {
-			return "redirect:/removeStudy2?studyNo="+studyNo;
+			return "redirect:/remove_study?studyNo="+studyNo;
 			
 		}
 	}

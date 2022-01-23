@@ -246,4 +246,11 @@ public class LoginController {
 			return map;
 		}
 	}
+	
+	//로그인 아이디 혹은 비밀번호가 틀렸을 때
+	@RequestMapping("error")
+	public String err() {
+		
+		return "error";
+	}
 }
