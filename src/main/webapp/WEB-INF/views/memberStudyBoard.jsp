@@ -102,6 +102,8 @@ margin: 50px;
 		</thead>
 		<tbody>
 		<!-- <div id="showList"> -->
+			<c:choose>
+			<c:when test="${not empty data}">
 			<c:forEach var="tmp" items="${data}">
 				<tr>
 					<td>${tmp.postNo }</td>
@@ -109,15 +111,15 @@ margin: 50px;
 					<td>${tmp.name }</td>
 					<td>${tmp.postTime }</td>
 					<td>${tmp.views }</td>
-					<td><c:set var="u" value="${tmp.userNo }" /> <c:set var="s"
-							value="${userNo }" /> <c:choose>
+					<td><c:set var="u" value="${tmp.userNo }" /> 
+					<c:set var="s" value="${userNo }" /> <c:choose>
 							<c:when test="${u eq s}">
 								<%-- <button
 									onclick="location.href='updatePost?postNo=${tmp.postNo }&userNo=${userNo }&studyNo=${studyNo }'">수정</button> --%>
 								<a href ="updatePost?postNo=${tmp.postNo }&studyNo=${studyNo }" class= "section-subheading text-muted">수정</a>
 							</c:when>
 						</c:choose></td>
-
+					
 					<td><c:set var="manager" value="${manager }" /> 
 					<c:set var="u" value="${tmp.userNo }" /> 
 					<c:set var="s" value="${userNo }" /> <c:choose>
@@ -131,8 +133,14 @@ margin: 50px;
 
 				</tr>
 			</c:forEach>
+			</c:when>
+			<c:otherwise>
+			<tr>
+				<td colspan="7">작성된 글이 없습니다.</td>
+			</tr>
+			</c:otherwise>
 			
-			
+			</c:choose>
 			<!-- </div> -->
 			<!-- PAGING -->
 			<tr style="text-align: center;">
