@@ -15,21 +15,30 @@ import org.springframework.web.servlet.ModelAndView;
 
 import pack.model.CommDaoInter;
 import pack.model.CommentDto;
+import pack.model.StudyDaoInter;
+import pack.model.StudyMemberDto;
+import pack.model.StudyMemberInter;
 import pack.model.UserDaoInter;
 
 @Controller
-public class modifyController {
+public class ModifyController {
 	
 	@Autowired
 	private UserDaoInter daoInter;
 	
 	@Autowired
 	private CommDaoInter cdinter;
-
 	
+	@Autowired
+	private StudyMemberInter sminter;
+
+	@Autowired
+	private StudyDaoInter sdinter;
+	
+	//비밀번호 일치한지 확인하기
 	@RequestMapping(value="checkPwd5", method=RequestMethod.POST)
 	@ResponseBody
-	public Map<String,String> checkPwd(
+	public Map<String,String> checkPwd5(
 			@RequestParam("checkPwd")String checkPwd,
 			@RequestParam("userNo")int userNo){
 		
@@ -55,6 +64,35 @@ public class modifyController {
 		
 	}
 	
+	
+	//비밀번호 확인하기
+	@RequestMapping(value="checkPwd",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,String> checkPwd(
+			@RequestParam("pwd")String pwd,
+			@RequestParam("studyNo")int studyNo){
+		
+		int mno=sdinter.selectManagerno(studyNo);
+		String pwd2=daoInter.selectNoPwd(mno);
+		
+		Map<String, String> map=new HashMap<String, String>();
+		
+		if(pwd.equals(pwd2)) {
+			System.out.println("비밀번호가 정확합니다.");
+			map.put("result", "y");
+			System.out.println(map);
+			return map;
+		}else {
+			System.out.println("비밀번호가 틀렸습니다.");
+			map.put("result", "n");
+			System.out.println(map);
+			return map;
+		}	
+	}
+	
+	
+	
+	//수정 페이지로 이동
 	@RequestMapping(value="modify", method=RequestMethod.GET)
 	public ModelAndView modify(
 			@RequestParam("userNo")int userNo){
@@ -66,21 +104,47 @@ public class modifyController {
 		return andView;
 	}
 	
-	@RequestMapping(value="modify2", method=RequestMethod.POST)
-	public ModelAndView modify2(
-			@RequestParam("userNo")int userNo,
-			@RequestParam("nName")String nName){
+	//닉네임 변경하기
+	@RequestMapping(value="useChangeName",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,String> useName(
+			@RequestParam("useName")String useName,
+			@RequestParam("studyNo")int studyNo){
 		
-		UserBean ubean=daoInter.selectunoUser(userNo);
-		ubean.setName(nName);
+		System.out.println("useName "+useName+"studyNo "+studyNo);
+		
+		Map<String, String> map=new HashMap<String, String>();
+		
+		Integer uno=daoInter.selectNameUserno(useName);
 		
 		
+		if(uno==0) {
+			System.out.println("1존재하지 않습니다.");
+			map.put("result", "n");
+			System.out.println(map);
+			return map;
+		}
 		
-		ModelAndView andView=new ModelAndView("modify");
-		andView.addObject("ubean", ubean);
-		return andView;
+		StudyMemberDto smdto=new StudyMemberDto();
+		smdto.setStudyNo(studyNo);
+		smdto.setUserNo(uno);
+		
+		boolean b=sminter.selectNoUser(smdto);
+		
+		if(b) {
+			System.out.println("존재합니다.");
+			map.put("result", "y");
+			System.out.println(map);
+			return map;
+		}else {
+			System.out.println("존재하지 않습니다.");
+			map.put("result", "n");
+			System.out.println(map);
+			return map;
+		}
 	}
 	
+	//수정 처리	
 	@RequestMapping(value="modifySuccess", method=RequestMethod.POST)
 	public String modifySuccess(
 			UserBean bean,
@@ -110,6 +174,7 @@ public class modifyController {
 		}
 	}
 	
+	//회원 탈퇴하기
 	@RequestMapping(value="deleteUser", method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String,String> deleteUser(@RequestParam("userNo")int userNo){

@@ -23,6 +23,7 @@ public class MyPageController {
 	@Autowired
 	private	StudyDaoInter inter;
 	
+	//마이페이지로 이동
 	@RequestMapping(value="mypage",method=RequestMethod.POST)
 	public ModelAndView firstMyPage(@RequestParam("userNo") String userNo) {
 		ModelAndView andView = new ModelAndView();
@@ -31,7 +32,7 @@ public class MyPageController {
 		
 	}
 	
-	
+	//스터디 조회 페이지로 이동
 	@RequestMapping(value="mystudyinfo",method=RequestMethod.POST)
 	public ModelAndView mystudyinfo(@RequestParam("userNo") String userNo) {
 		ModelAndView andView = new ModelAndView();
