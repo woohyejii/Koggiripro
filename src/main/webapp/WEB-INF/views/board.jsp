@@ -35,7 +35,7 @@
 		<tr>
 			<td><a href="studyboard?studyNo=${tmp.sNo }&page=1">${slist[status.index] }</a></td>
 			<td>${tmp.postNo }</td>
-			<td><a href="postDetail?postNo=${tmp.postNo }&cpage=0&studyNo=${tmp.sNo }&userNo=${tmp.uNo }">${tmp.title }</a></td>
+			<td><a href="postDetail?postNo=${tmp.postNo }&cpage=0&studyNo=${tmp.sNo }">${tmp.title }</a></td>
 			<td>${name }</td>
 			<td>${tmp.postTime }</td>
 			<td>${tmp.views }</td>

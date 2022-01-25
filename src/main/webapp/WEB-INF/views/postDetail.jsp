@@ -114,7 +114,7 @@ window.onload=function(){
 	<c:set var="s" value="${userNo }" /> 
 	<c:choose>
 		<c:when test="${u eq s}">
-			<a href ="updatePost?postNo=${pdata.postNo }&userNo=${userNo }&studyNo=${pdata.sNo }">수정</a>
+			<a href ="updatePost?postNo=${pdata.postNo }&studyNo=${pdata.sNo }">수정</a>
 		</c:when>
 	</c:choose>
 	
