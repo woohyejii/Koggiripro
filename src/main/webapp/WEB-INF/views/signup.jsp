@@ -3,49 +3,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author"
-   content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-<meta name="generator" content="Hugo 0.88.1">
-<title>Insert title here</title>
-<!-- sign-in -->
-<link rel="canonical"
-   href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
-<!-- Bootstrap core CSS -->
-<link
-   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-   rel="stylesheet">
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
+    <meta name="author" content="Inovatik">
 
-<!-- Core theme CSS (includes Bootstrap)-->
-<link href="resources/css/style.css"  rel="stylesheet" />
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
 
-<!-- css login -->
-<link href="resources/css/log_sign.css" rel="stylesheet"/>
+	<!-- Website Title -->
+    <title>Sign Up - Tivo - SaaS App HTML Landing Page Template</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;display=swap&amp;subset=latin-ext"
+        rel="stylesheet">
+    <link href="resources/css/bootstrap.css" rel="stylesheet">
+    <link href="resources/css/fontawesome-all.css" rel="stylesheet">
+    <link href="resources/css/swiper.css" rel="stylesheet">
+    <link href="resources/css/magnific-popup.css" rel="stylesheet">
+    <link href="resources/css/styles.css" rel="stylesheet">
 
-<style>
-.bd-placeholder-img {
-	font-size: 1.125rem;
-	text-anchor: middle;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-}
-
-.div{
-	margin: 15px;
-}
-
-@media ( min-width : 768px) {
-	.bd-placeholder-img-lg {
-		font-size: 3.5rem;
-	}
-}
-</style>
-
-
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
 
 <script type="text/javascript">
 //아이디, 닉네임 중복확인 했는지 확인하는 용도
@@ -216,68 +204,178 @@ function checkData(){
 
 </script>
 </head>
-<body class="text-center">
-<main class="form-signin">
-<form action="signup" method="post" name="frm">
-<img class="mb-4" src="resources/img/logo/파랑코끼리.png" alt=""
-            width="100" height="100">
-<h1 class="h3 mb-3 fw-normal">회원 가입</h1>     
-       <div class="form-floating" style="line-height:60%">
-      <input type="text" class="form-control valueId" name="id" id="id">
-      <label for="floatingInput">아이디</label>
-     <br>
-      <button class="w-100 btn btn-lg btn-secondary" type="button"
-            value="회원가입" id="btnId">중복확인</button>
-   </div>
-       <br>
-       
-       
-   <div class="form-floating">
-      <input type="password" class="form-control" name="password" id="password">
-      <label for="floatingPassword">비밀번호</label>
-   </div>
-   <br>
-   
-    <div class="form-floating">  
-      <input type="password" class="form-control" id="password2">
-        <label for="floatingPassword">비밀번호 확인</label>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
     </div>
-    <br>
-   
-   <div class="form-floating" style="line-height:60%"> 
-      <input type="text" name="name" class="form-control valueName" id="name">
-      <label for="floatingInput">닉네임</label>
-      <br>
-      <button class="w-100 btn btn-lg btn-secondary" type="button"
-            value="회원가입" id="btnName">중복확인</button>
-   </div>
-   <div>
-   		<label>비밀번호 확인 질문</label>
-	   	<select name="hint">
-	   		<option value="hint_01">자신의 인생 좌우명은?</option>
-	   		<option value="hint_02">자신의 보물 제1호는?</option>
-	   		<option value="hint_03">가장 기억에 남는 선생님 성함은?</option>
-	   		<option value="hint_04">받았던 선물 중 기억에 남는 독특한 선물은?</option>
-	   		<option value="hint_05">유년시절 가장 생각나는 친구 이름은?</option>
-	   		<option value="hint_06">인상 깊게 읽은 책 이름은?</option>
-	   		<option value="hint_07">자신이 두번째로 존경하는 인물은?</option>
-	   		<option value="hint_08">친구들에게 공개하지 않은 어릴 적 별명이 있다면?</option>
-	   		<option value="hint_09">다시 태어나면 되고 싶은 것은?</option>
-	   		<option value="hint_10">내가 좋아하는 캐릭터는?</option>
-	   	</select>
-	</div>
-	<div>
-		<label>비밀번호 확인 답변</label>
-	   	<input type="text" name="answer" id="answer">
-    </div>
-   
-   
-   
-   <br>
-      <button class="w-100 btn btn-lg btn-primary" type="button"
-            value="가입하기" id="btnIns">가입하기</button>
-        <a href="login">로그인</a>
-      
+    <!-- end of preloader -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="index.html"><img src="resources/images/logo-001.svg" alt="alternative"></a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+            <!-- end of mobile menu toggle button -->
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll active" href="#header">HOME <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="home">스터디</a>
+                    </li>
+
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle page-scroll" href="#" id="navbarDropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">채용</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://www.wanted.co.kr/"><span class="item-text">원티드</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="https://www.jobkorea.co.kr/"><span class="item-text">잡코리아</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="https://www.saramin.co.kr"><span class="item-text">사람인</span></a>
+                        </div>
+                    </li>
+                    <!-- end of dropdown menu -->
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="studyCafeMap.jsp">지도</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="faq.jsp">FAQ</a>
+                    </li>
+                </ul>
+                
+                <%
+                  //로그인된 아이디가 있는지 확인
+                  String name=(String)session.getAttribute("namekey");
+                  int userNo=(Integer)session.getAttribute("userNo");
+                %>
+                <%if(name==null){ %>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="login">로그인</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="signup">회원가입</a>
+                </span>
+                <%}else{ %>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="alarmList?userNo=${userNo }">알림</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="javascript:void(0);" onclick="javascript:frm.submit();">마이페이지</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="logout">로그아웃</a>
+                </span>
+                <%} %>
+            </div>
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    
+    
+    <!-- Header -->
+    <header id="header" class="ex-2-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Sign Up</h1>
+                   <p>이미 가입하셨나요?<a class="white" href="login"><br>Log In</a></p> 
+                    <!-- Sign Up Form -->
+                    <div class="form-container">
+                        <form form action="signup" method="post" name="frm" id="signUpForm" data-toggle="validator" data-focus="false">
+                            <div class="form-group">
+                                <input type="text" class="form-control-input valueId" name="id" id="id" id="semail" required>
+                                <label class="label-control" for="semail" >아이디</label>
+                                <div class="help-block with-errors"></div>
+                                <br>
+                                <button class="w-100 btn btn-lg btn-secondary" type="button" value="회원가입" id="btnId">중복확인</button>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control-input" name="password" id="password" id="spassword" required>
+                                <label class="label-control" for="spassword">비밀번호</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control-input" id="password2" required>
+                                <label class="label-control" for="spassword">비밀번호 확인</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control-input valueName" name="name" id="name" id="sname" required>
+                                <label class="label-control" for="sname">닉네임</label>
+                                <div class="help-block with-errors"></div>
+                                <br>
+                                <button class="w-100 btn btn-lg btn-secondary" type="button" value="회원가입" id="btnName">중복확인</button>
+                            </div>
+                            <div class="form-group">
+                            <label>비밀번호 확인 질문</label>
+						   	<select name="hint">
+						   		<option value="hint_01">자신의 인생 좌우명은?</option>
+						   		<option value="hint_02">자신의 보물 제1호는?</option>
+						   		<option value="hint_03">가장 기억에 남는 선생님 성함은?</option>
+						   		<option value="hint_04">받았던 선물 중 기억에 남는 독특한 선물은?</option>
+						   		<option value="hint_05">유년시절 가장 생각나는 친구 이름은?</option>
+						   		<option value="hint_06">인상 깊게 읽은 책 이름은?</option>
+						   		<option value="hint_07">자신이 두번째로 존경하는 인물은?</option>
+						   		<option value="hint_08">친구들에게 공개하지 않은 어릴 적 별명이 있다면?</option>
+						   		<option value="hint_09">다시 태어나면 되고 싶은 것은?</option>
+						   		<option value="hint_10">내가 좋아하는 캐릭터는?</option>
+						   	</select>
+							</div>
+							
+							<div class="form-group">
+							<label>비밀번호 확인 답변</label>
+						   	<input type="text" name="answer" id="answer">
+                            </div>
+                            
+                            
+                           
+                            <div class="form-group">
+                                <button type="button" id="btnIns" class="form-control-submit-button">SIGN UP</button>
+                            </div>
+                            
+                        </form>
+                    </div> <!-- end of form container -->
+                    <!-- end of sign up form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    
+    
+   <!-- Scripts -->
+    <script src="resources/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="resources/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="resources/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="resources/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="resources/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="resources/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="resources/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="resources/js/scripts.js"></script> <!-- Custom scripts -->
    
 
 </form>
