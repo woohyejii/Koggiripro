@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
+    <meta charset="utf-8">
+    <title>스터디 지도</title>
+    <style>
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
 .map_wrap {position:relative;width:100%;height:500px;}
@@ -45,9 +44,8 @@
 </style>
 </head>
 <body>
-<h2>스터디 카페 주소 찾기</h2>
 <div class="map_wrap">
-    <div id="map" style="width:1200px;height:500px;position:relative;overflow:hidden;"></div>
+    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
     <div id="menu_wrap" class="bg_white">
         <div class="option">
@@ -175,7 +173,7 @@ function displayPlaces(places) {
         fragment.appendChild(itemEl);
     }
 
-    // 검색결과 항목들을 검색결과 목록 Elemnet에 추가합니다
+    // 검색결과 항목들을 검색결과 목록 Element에 추가합니다
     listEl.appendChild(fragment);
     menuEl.scrollTop = 0;
 
