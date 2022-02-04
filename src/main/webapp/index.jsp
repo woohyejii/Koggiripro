@@ -1,525 +1,870 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<html lang="en">
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>ÄÚµù ÃÊº¸³¢¸®!</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="resources/css/styles.css" rel="stylesheet" />
-    	<style>
-    	/*ÀÌ¹ÌÁö °¡¿îµ¥ Á¤·Ä*/
-    	.mimg { display: block; margin: 0px auto; }
-    	</style>
-    
-    </head>
-    <body id="page-top">
-        
-        <!-- È¨ ³×ºñ¹Ù -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="resources/img/logo/³ë¶ûÄÚ³¢¸®.png" alt="..." /></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <!-- indexÆäÀÌÁö¿¡¼­¸¸ ³×ºñ¹Ù¿¡ home, study, developer .. ÅÇÀÌ º¸ÀÌ°í ´Ù¸¥ ÆäÀÌÁö·Î ÀÌµ¿ÇÏ¸é study, developer´Â ¾ø¾Ö°í home¸¸ ¸¸µé¾î¼­ home À» ´©¸£¸é index ÆäÀÌÁö·Î ÀÌµ¿ÇÏ°Ô²û!!! -->
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">STUDY</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Developer">Developer</a></li>
-                        <li class="nav-item"><a class="nav-link" href="home">½ºÅÍµðÃ£±â</a></li>
-                        <li class="nav-item"><a class="nav-link" href="info.jsp">Ã¤¿ëÁ¤º¸</a></li>
-                        <li class="nav-item"><a class="nav-link" href="faq.jsp">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="studyCafeMap.jsp">Áöµµ</a></li>
-                        
-                        <%
-                  //·Î±×ÀÎµÈ ¾ÆÀÌµð°¡ ÀÖ´ÂÁö È®ÀÎ
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content=""> <!-- website name -->
+    <meta property="og:site" content=""> <!-- website link -->
+    <meta property="og:title" content=""> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content=""> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content=""> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content=""> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article">
+
+    <!-- Website Title -->
+    <title>Koggiri-studymate</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;display=swap&amp;subset=latin-ext"
+        rel="stylesheet">
+    <link href="resources/css/bootstrap.css" rel="stylesheet">
+    <link href="resources/css/fontawesome-all.css" rel="stylesheet">
+    <link href="resources/css/swiper.css" rel="stylesheet">
+    <link href="resources/css/magnific-popup.css" rel="stylesheet">
+    <link href="resources/css/styles.css" rel="stylesheet">
+
+    <!-- Favicon  -->
+    <link rel="icon" href="resources/images/favicon.png">
+    <!-- Icon -->
+    <script src="https://kit.fontawesome.com/cc41398456.js" crossorigin="anonymous"></script>
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+<a href="body" class="back-to-top page-scroll" style="display: none;">Back to Top</a>
+
+        <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="index.html"><img src="resources/images/logo-001.svg" alt="alternative"></a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+            <!-- end of mobile menu toggle button -->
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll active" href="#header">HOME <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="home">ìŠ¤í„°ë””</a>
+                    </li>
+
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle page-scroll" href="#" id="navbarDropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">ì±„ìš©</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://www.wanted.co.kr/"><span class="item-text">ì›í‹°ë“œ</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="https://www.jobkorea.co.kr/"><span class="item-text">ìž¡ì½”ë¦¬ì•„</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="https://www.saramin.co.kr"><span class="item-text">ì‚¬ëžŒì¸</span></a>
+                        </div>
+                    </li>
+                    <!-- end of dropdown menu -->
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="studyCafeMap.jsp">ì§€ë„</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="faq.jsp">FAQ</a>
+                    </li>
+                </ul>
+                
+                <%
+                  //ë¡œê·¸ì¸ëœ ì•„ì´ë””ê°€ ìžˆëŠ”ì§€ í™•ì¸
                   String name=(String)session.getAttribute("namekey");
                   int userNo=(Integer)session.getAttribute("userNo");
-                  %>
-                  <%if(name==null){ %>
-                     <li class="nav-right"><a class="nav-link" href="login">·Î±×ÀÎ</a></li>
-                     <li class="nav-right"><a class="nav-link" href="signup">È¸¿ø°¡ÀÔ</a></li>
-                  <%}else{ %>
-                     <li class="nav-right"><a class="nav-link" href="alarmList?userNo=${userNo }">¾Ë¸²</a></li>
-                     <li class="nav-right"><a class="nav-link" href="javascript:void(0);" onclick="javascript:frm.submit();">¸¶ÀÌÆäÀÌÁö</a></li>
-                     <li class="nav-right"><a class="nav-link" href="logout">·Î±×¾Æ¿ô</a><br></li>
-                  <%} %>
+                %>
+                <%if(name==null){ %>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="login">ë¡œê·¸ì¸</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="signup">íšŒì›ê°€ìž…</a>
+                </span>
+                <%}else{ %>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="alarmList?userNo=${userNo }">ì•Œë¦¼</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="javascript:void(0);" onclick="javascript:frm.submit();">ë§ˆì´íŽ˜ì´ì§€</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="logout">ë¡œê·¸ì•„ì›ƒ</a>
+                </span>
+                <%} %>
+            </div>
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    
+    
+	<!-- ë§ˆì´íŽ˜ì´ì§€ ì´ë™ -->
+	<form action="mypage" method="post" name="frm">
+	<input type="hidden" name="userNo" value=${userNo}>
+	</form>
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-xl-5">
+                        <div class="text-container">
+                            <h1>ë‹¤ê°™ì´ ëª¨ì—¬ì„œ <br> ì½”ë”©í•´ìš”!&nbsp;<i class="fa-solid fa-comments"></i></h1>
+                            <p class="p-large">PICK UP YOUR STUDY</p>
+                            <a class="btn-solid-lg page-scroll" href="signup">ì½”ë¼ë¦¬ ì‹œìž‘í•˜ê¸°</a>
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6 col-xl-7">
+                        <div class="image-container">
+                            <div class="img-wrapper">
+                                <div class="frame">
+                                    <div class="center">
+                                        <div class="circle">
+                                        <div class="sky"></div>
+                                        <div class="sun"></div>
+                                        <div class="side-left"></div>
+                                        <div class="side-right"></div>
+                                        <div class="shadow"></div>
+                                        <div class="ground"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div> <!-- end of img-wrapper -->
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of header-content -->
+    </header> <!-- end of header -->
+    <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        viewBox="0 0 1920 310">
+        <defs>
+            <style>
+                .cls-1 {
+                    fill: #185ADB;
+                }
+            </style>
+        </defs>
+        <title>header-frame</title>
+        <path class="cls-1"
+            d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z">
+        </path>
+    </svg>
+    <!-- end of header -->
+
+
+    <!-- Customers -->
+    <div class="slider-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Image Slider -->
+                    <div class="slider-container">
+                        <div class="swiper-container image-slider swiper-container-horizontal">
+                            <div class="swiper-wrapper"
+                                style="transform: translate3d(-1670.4px, 0px, 0px); transition-duration: 0ms;">
+                                <div class="swiper-slide swiper-slide-duplicate"
+                                    style="width: 178.8px; margin-right: 30px;" data-swiper-slide-index="1">
+                                    <img class="img-fluid" src="resources/images/javascript02.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                                    data-swiper-slide-index="2" style="width: 178.8px; margin-right: 30px;">
+                                    <img class="img-fluid" src="resources/images/kotlin03.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                                    data-swiper-slide-index="3" style="width: 178.8px; margin-right: 30px;">
+                                    <img class="img-fluid" src="resources/images/node.js04.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
+                                    style="width: 178.8px; margin-right: 30px;" data-swiper-slide-index="4">
+                                    <img class="img-fluid" src="resources/images/python05.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate"
+                                    style="width: 178.8px; margin-right: 30px;" data-swiper-slide-index="5">
+                                    <img class="img-fluid" src="resources/images/spring06.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide" style="width: 178.8px; margin-right: 30px;"
+                                    data-swiper-slide-index="0">
+                                    <img class="img-fluid" src="resources/images/java01.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide" style="width: 178.8px; margin-right: 30px;"
+                                    data-swiper-slide-index="1">
+                                    <img class="img-fluid" src="resources/images/javascript02.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="2"
+                                    style="width: 178.8px; margin-right: 30px;">
+                                    <img class="img-fluid" src="resources/images/kotlin03.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="3"
+                                    style="width: 178.8px; margin-right: 30px;">
+                                    <img class="img-fluid" src="resources/images/node.js04.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-next" style="width: 178.8px; margin-right: 30px;"
+                                    data-swiper-slide-index="4">
+                                    <img class="img-fluid" src="resources/images/python05.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide" style="width: 178.8px; margin-right: 30px;"
+                                    data-swiper-slide-index="5">
+                                    <img class="img-fluid" src="resources/images/spring06.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate"
+                                    style="width: 178.8px; margin-right: 30px;" data-swiper-slide-index="0">
+                                    <img class="img-fluid" src="resources/images/java01.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate"
+                                    style="width: 178.8px; margin-right: 30px;" data-swiper-slide-index="1">
+                                    <img class="img-fluid" src="resources/images/javascript02.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                                    data-swiper-slide-index="2" style="width: 178.8px; margin-right: 30px;">
+                                    <img class="img-fluid" src="resources/images/kotlin03.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                                    data-swiper-slide-index="3" style="width: 178.8px; margin-right: 30px;">
+                                    <img class="img-fluid" src="resources/images/node.js04.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
+                                    style="width: 178.8px; margin-right: 30px;" data-swiper-slide-index="4">
+                                    <img class="img-fluid" src="resources/images/python05.png" alt="alternative">
+                                </div>
+                            </div> <!-- end of swiper-wrapper -->
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div> <!-- end of swiper container -->
+                    </div> <!-- end of slider-container -->
+                    <!-- end of image slider -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of slider-1 -->
+    <!-- end of customers -->
+
+
+    <!-- Description -->
+    <div class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="above-heading">DIRECTION</div>
+                    <h2 class="h2-heading">NO PAIN NO GAIN</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-fluid" src="resources/images/description-1.png" alt="alternative">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">ì†Œí†µ</h4>
+                            <p>ì•Œê³ ìžˆëŠ” ê²ƒê³¼ ëª¨ë¥´ëŠ” ê²ƒì„ ë‹¤ë¥¸ ì‚¬ëžŒë“¤ê³¼ ì†Œí†µí•˜ë©´ì„œ ê³µìœ í•  ìˆ˜ ì—†ì„ê¹Œ?</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-fluid" src="resources/images/description-2.png" alt="alternative">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">ëŠ¥ë ¥</h4>
+                            <p>ê°œë°œìžëŠ” í‰ìƒ ê³µë¶€í•˜ëŠ” ì§ì—…ì´ë¼ê³  í•˜ëŠ”ë° ë‚˜ì˜ ëŠ¥ë ¥ì„ ë” í‚¤ì›Œë³´ê³  ì‹¶ì€ê±¸...</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-fluid" src="resources/images/description-3.png" alt="alternative">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">ì»¤ë¦¬ì–´</h4>
+                            <p>í¬íŠ¸í´ë¦¬ì˜¤ì— ì¶”ê°€í•  ë¯¸ë‹ˆ í”„ë¡œì íŠ¸ë¥¼ í•˜ê³  ì‹¶ì€ë° ë‚˜í˜¼ìž í•˜ëŠ” ê²ƒ ë³´ë‹¤ 
+                                ë‹¤ë¥¸ ì‚¬ëžŒë“¤ê³¼ í•¨ê»˜ í•´ë³´ê³  ì‹¶ì€ë°...</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of description -->
+
+
+    <!-- Features -->
+    <div id="features" class="tabs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="above-heading">FEATURES</div>
+                    <h2 class="h2-heading">HOW?</h2>
+                    <p class="p-heading">ì½”ë¼ë¦¬ë¥¼ ì´ìš©í•˜ëŠ” ë°©ë²•ì„ ì†Œê°œí•©ë‹ˆë‹¤! <br>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Tabs Links -->
+                    <ul class="nav nav-tabs" id="argoTabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab"
+                                aria-controls="tab-1" aria-selected="true"><i class="fa-solid fa-desktop"></i>&nbsp; Hello World!</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab"
+                                aria-controls="tab-2" aria-selected="false"><i class="fa-solid fa-magnifying-glass"></i>&nbsp; FINDING STUDY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab"
+                                aria-controls="tab-3" aria-selected="false"><i class="fa-solid fa-door-open"></i>&nbsp; ENJOY KOGGIRI</a>
+                        </li>
                     </ul>
-                </div>
-            </div>
-        </nav>
-		<!-- ¸¶ÀÌÆäÀÌÁö ÀÌµ¿ -->
-		<form action="mypage" method="post" name="frm">
-		<input type="hidden" name="userNo" value=${userNo}>
-		</form>
+                    <!-- end of tabs links -->
 
-        <!-- Services-->
-        <section class="page-section" id="#">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">ÄÚ³¢¸®</h2>
-                    <h3 class="section-subheading text-muted">ÄÚµùÃÊº¸³¢¸® ½ºÅÍµðÇÏ´Â °ø°£</h3>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">½ºÅÍµð ¸¸µé±â</h4>
-                        <p class="text-muted">¿øÇÏ´Â ¾ð¾î¸¦ ¼±ÅÃÇÏ¿© ½ºÅÍµð¸¦ ¸¸µé¾î¼­ ÄÚµù Ä£±¸¸¦ ¸ð¾Æº¸¼¼¿ä.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Ã¤¿ë»çÀÌÆ®</h4>
-                        <p class="text-muted">¸ÅÀÏ¸ÅÀÏ ¾÷µ¥ÀÌÆ® µÇ´Â Ã¤¿ë»çÀÌÆ®¸¦ ÇÑ °÷¿¡¼­ ¸ð¾Æº¸¼¼¿ä.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">ÄÚµù</h4>
-                        <p class="text-muted">ÄÚ³¢¸®´Â ÃÊº¸ °³¹ßÀÚºÐµéµµ ¾ðÁ¦³ª È¯¿µÀÔ´Ï´Ù.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="portfolio">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">STUDY</h2>
-                    <h3 class="section-subheading text-muted">¹è¿ì°í½ÍÀº ¾ð¾î¸¦ ¼±ÅÃÇÏ¿© ½ºÅÍµð¸¦ ÇØº¸¼¼¿ä.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid mimg center-block" src="./resources/img/Language/NODEJS.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Node.js</div>
-                                <div class="portfolio-caption-subheading text-muted">³ëµåÁ¦ÀÌ¿¡½º</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 2-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid mimg center-block" src="./resources/img/Language/PYTHON.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">ÆÄÀÌ½ã</div>
-                                <div class="portfolio-caption-subheading text-muted">Python</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 3-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid mimg center-block" src="./resources/img/Language/JAVA.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">ÀÚ¹Ù</div>
-                                <div class="portfolio-caption-subheading text-muted">Java</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Portfolio item 4-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid mimg center-block" src="./resources/img/Language/JAVASCRIPT.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">ÀÚ¹Ù½ºÅ©¸³Æ®</div>
-                                <div class="portfolio-caption-subheading text-muted">JavaScript</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Portfolio item 5-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid mimg center-block" src="./resources/img/Language/SPRING.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">½ºÇÁ¸µ</div>
-                                <div class="portfolio-caption-subheading text-muted">Spring</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <!-- Portfolio item 6-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid mimg center-block" src="./resources/img/Language/KOTLIN.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">ÄÚÆ²¸°</div>
-                                <div class="portfolio-caption-subheading text-muted">Kotlin</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
+                    <!-- Tabs Content -->
+                    <div class="tab-content" id="argoTabsContent">
 
-        <!-- Developer -->
-        <section class="page-section bg-light" id="Developer">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">ÄÚ³¢¸® Á¦ÀÛÆÀ</h2>
-                    <h3 class="section-subheading text-muted">ÄÚµù ÃÊº¸ ³¢¸® ¸ðÀÎ Á¦ÀÛÆÀÀ» ¼Ò°³ÇÕ´Ï´Ù.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="resources/img/team/naver.png" alt="..." />
-                            <h4>ÀÌÀ¯°æ</h4>
-                            <p class="text-muted">¹é¿£µå</p>
-                            <!-- 
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                             -->
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="resources/img/team/kakao.png" alt="..." />
-                            <h4>¿ìÇýÁö</h4>
-                            <p class="text-muted">ÇÁ·ÐÆ®¿£µå</p>
-                      <!-- 
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                             -->
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="resources/img/team/woo-ah.png" alt="..." />
-                            <h4>ÀÌÇý¿ø</h4>
-                            <p class="text-muted">¹é¿£µå</p>
-                      <!-- 
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                             -->
-                        </div>
-                    </div>
+                        <!-- Tab -->
+                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="image-container">
+                                        <img class="img-fluid" src="resources/images/Hello World-001.png" alt="alternative">
+                                    </div> <!-- end of image-container -->
+                                </div> <!-- end of col -->
+                                <div class="col-lg-6">
+                                    <div class="text-container">
+                                        <h2>Hello Word!</h2>
+                                        <p>ì½”ë”©ì„ ì²˜ìŒ í•˜ì‹œëŠ” ë¶„ë“¤ì´ ì²˜ìŒìœ¼ë¡œ ë°œìžêµ­ì„ ì°ê²Œ ë˜ëŠ” Hello World! 
+                                            ì½”ë¼ë¦¬ í™ˆíŽ˜ì´ì§€ì— ì ‘ì†í•˜ì‹œê³  í™ˆíŽ˜ì´ì§€ì—ì„œ ê°€ì´ë“œë¥¼ ì½ìœ¼ì‹  í›„<br> 
+                                            ì½”ë¼ë¦¬ ì´ìš©ì„ ìœ„í•œ ë¡œê·¸ì¸/íšŒì›ê°€ìž…ì„ í•´ì£¼ì„¸ìš”.<br>
+                                            <a class="blue page-scroll" href="signup">Sign Up Form</a> 
+                                        </p>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-square"></i>
+                                                <div class="media-body">í™ˆíŽ˜ì´ì§€ì˜ ê°€ì´ë“œ ì½ê¸°</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-square"></i>
+                                                <div class="media-body">ë¡œê·¸ì¸/íšŒì›ê°€ìž…
+                                                </div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-square"></i>
+                                                <div class="media-body">ìŠ¤í„°ë”” ì´ìš©</div>
+                                            </li>
+                                        </ul>
+                                        <a class="btn-solid-reg popup-with-move-anim"
+                                            href="#details-lightbox-1">CLICK</a>
+                                    </div> <!-- end of text-container -->
+                                </div> <!-- end of col -->
+                            </div> <!-- end of row -->
+                        </div> <!-- end of tab-pane -->
+                        <!-- end of tab -->
+
+                        <!-- Tab -->
+                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="image-container">
+                                        <img class="img-fluid" src="resources/images/Hello World-002.png" alt="alternative">
+                                    </div> <!-- end of image-container -->
+                                </div> <!-- end of col -->
+                                <div class="col-lg-6">
+                                    <div class="text-container">
+                                        <h2>FINDING STUDY</h2>
+                                        <p>ë¡œê·¸ì¸ì„ í•´ì£¼ì‹  ì—¬ëŸ¬ë¶„ ì¶•í•˜ë“œë¦½ë‹ˆë‹¤!<i class="fa-solid fa-hands-clapping"></i><br>
+                                        ê³µë¶€ë¥¼ ìœ„í•œ ë©‹ì§„ í•œ ê±¸ìŒì„ ë‚´ë”›ì€ ì—¬ëŸ¬ë¶„ì€ ì´ì œ ë‹¤ë¥¸ ë¶„ë“¤ê³¼ í•¨ê»˜ <br>ìŠ¤í„°ë””ë¥¼
+                                    ì§„í–‰í•˜ê²Œ ë  ê±°ì˜ˆìš”! </p>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-square"></i>
+                                                <div class="media-body">ë¡œê·¸ì¸ í›„ ìƒë‹¨ ì¹´í…Œê³ ë¦¬ ëª©ë¡ ì¤‘ ìŠ¤í„°ë””ë¥¼ ëˆŒëŸ¬ì£¼ì„¸ìš”.</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-square"></i>
+                                                <div class="media-body">ì›í•˜ì‹œëŠ” ì–¸ì–´ë¥¼ ê³¨ë¼ì£¼ì„¸ìš”! ì§ì ‘ ìŠ¤í„°ë””ë¥¼ ë§Œë“¤ ìˆ˜ë„ ìžˆì–´ìš”!</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-square"></i>
+                                                <div class="media-body">ìŠ¤í„°ë””ì˜ ë©¤ë²„ë‚˜ ë¦¬ë”ê°€ ë˜ì–´ì„œ ìŠ¤í„°ë””í™œë™ì„ í•´ë³´ì„¸ìš”!</div>
+                                            </li>
+                                        </ul>
+                                        <a class="btn-solid-reg popup-with-move-anim"
+                                            href="#details-lightbox-2"> CLICK</a>
+                                    </div> <!-- end of text-container -->
+                                </div> <!-- end of col -->
+                            </div> <!-- end of row -->
+                        </div> <!-- end of tab-pane -->
+                        <!-- end of tab -->
+
+                        <!-- Tab -->
+                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="image-container">
+                                        <img class="img-fluid" src="resources/images/Hello-World-003.png" alt="alternative">
+                                    </div> <!-- end of image-container -->
+                                </div> <!-- end of col -->
+                                <div class="col-lg-6">
+                                    <div class="text-container">
+                                        <h3>ENJOY KOGGIRI</h3>
+                                        <p>ìŠ¤í„°ë””ë¥¼ ì§ì ‘ ë§Œë“¤ì–´ ë³´ê±°ë‚˜ ê°€ìž… í•˜ì…¨ë‚˜ìš”? í›Œë¥­í•©ë‹ˆë‹¤! <br>
+                                        ì½”ë¼ë¦¬ì—ì„œëŠ” ìŠ¤í„°ë”” í™œë™ë¿ë§Œ ì•„ë‹ˆë¼ ì·¨ì—…ì„ ìœ„í•œ ì·¨ì—…ì‚¬ì´íŠ¸ë¥¼<br>
+                                    ì‚´íŽ´ë³´ê±°ë‚˜, ìŠ¤í„°ë””ë¥¼ ìœ„í•´ ì£¼ë³€ì˜ ìŠ¤í„°ë””ë£¸ì„ ì°¾ì•„ë³¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. <br>
+                                    ì½”ë¼ë¦¬ë¥¼ í†µí•˜ì—¬ ì›í•˜ì‹œëŠ” ëª©ì  ë‹¬ì„±ì„ ì‘ì›í•©ë‹ˆë‹¤!</p>
+                                        <ul class="list-unstyled li-space-lg">
+                                            <li class="media">
+                                                <i class="fas fa-square"></i>
+                                                <div class="media-body">ê°ì¢… ì·¨ì—…ì‚¬ì´íŠ¸ë¥¼ í•œ ê³³ì—ì„œ ë°”ë¡œ ì´ë™í•´ë³´ì„¸ìš”!
+                                                    </div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-square"></i>
+                                                <div class="media-body">ìŠ¤í„°ë””ì›ë“¤ê³¼ ë§Œë‚˜ê¸°ìœ„í•œ ìŠ¤í„°ë””ë£¸ì„ ì§€ë„ì—ì„œ ì°¾ì•„ë³´ì„¸ìš”!</div>
+                                            </li>
+                                            <li class="media">
+                                                <i class="fas fa-square"></i>
+                                                <div class="media-body">ì½”ë¼ë¦¬ë¥¼ í†µí•˜ì—¬ íŽ¸ë¦¬í•˜ê³  ì¦ê±°ìš´ ìŠ¤í„°ë””ë¥¼ í•´ë³´ì„¸ìš”!</div>
+                                            </li>
+                                        </ul>
+                                        <a class="btn-solid-reg popup-with-move-anim"
+                                            href="#details-lightbox-3">CLICK</a>
+                                    </div> <!-- end of text-container -->
+                                </div> <!-- end of col -->
+                            </div> <!-- end of row -->
+                        </div> <!-- end of tab-pane -->
+                        <!-- end of tab -->
+
+                    </div> <!-- end of tab content -->
+                    <!-- end of tabs content -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of tabs -->
+    <!-- end of features -->
+
+
+    <!-- Details Lightboxes -->
+    <!-- Details Lightbox 1 -->
+    <div id="details-lightbox-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="container">
+            <div class="row">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">Ã—</button>
+                <div class="col-lg-8">
+                    <div class="image-container">
+                        <img class="img-fluid" src="resources/images/detail-001.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
                 <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="resources/img/team/carrot.png" alt="..." />
-                            <h4>ÀÓÁöÀ±</h4>
-                            <p class="text-muted">¹é¿£µå</p>
-                      <!-- 
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                             -->
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Ãë¾÷½ÃÄÑÁÖ¼¼¿ä Á¦¹ß</p></div>
-                </div>
-            </div>
-        </section>
+                    <h3>ê°„íŽ¸í•œ íšŒì›ê°€ìž…</h3>
+                    <hr>
+                    <h5>Core service</h5>
+                    <p>ì½”ë¼ë¦¬ì—ì„œëŠ” ê°„íŽ¸í•œ íšŒì›ê°€ìž…ì„ í†µí•˜ì—¬ ìŠ¤í„°ë””ë¥¼ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.<br>
+                    íšŒì›ê°€ìž…ì‹œì—ëŠ” ê°œì¸ì •ë³´ë¥¼ ìš”êµ¬í•˜ì§€ ì•Šìœ¼ë‹ˆ ê±±ì •ë§ê³  ê°€ìž…í•˜ì„¸ìš”! :)</p>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Automate user signup</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Quick formatting tools</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Fast email checking</div>
+                        </li>
+                    </ul>
+                    <a class="btn-solid-reg mfp-close" href="signup">SIGN UP</a> <a
+                        class="btn-outline-reg mfp-close as-button" href="#screenshots">ë‹«ê¸°</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of details lightbox 1 -->
 
-        <!-- Footer-->
-        <footer class="footer py-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2021</div>  
-                    <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-					  <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-					  <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-					</svg></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Node.js</h2>
-                                     <p class="item-intro text-muted">³ëµåÁ¦ÀÌ¿¡½º</p>
-                                     
-                                    <!-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                     -->
-                                    <p>Node.js´Â È®Àå¼º ÀÖ´Â ³×Æ®¿öÅ© ¾ÖÇÃ¸®ÄÉÀÌ¼Ç(Æ¯È÷ ¼­¹ö »çÀÌµå) °³¹ß¿¡ »ç¿ëµÇ´Â ¼ÒÇÁÆ®¿þ¾î ÇÃ·§ÆûÀÌ´Ù. ÀÛ¼º ¾ð¾î·Î ÀÚ¹Ù½ºÅ©¸³Æ®¸¦ È°¿ëÇÏ¸ç ³íºí·ÎÅ·(Non-blocking) I/O¿Í ´ÜÀÏ ½º·¹µå ÀÌº¥Æ® ·çÇÁ¸¦ ÅëÇÑ ³ôÀº Ã³¸® ¼º´ÉÀ» °¡Áö°í ÀÖ´Ù.
-										<br>³»Àå HTTP ¼­¹ö ¶óÀÌºê·¯¸®¸¦ Æ÷ÇÔÇÏ°í ÀÖ¾î À¥ ¼­¹ö¿¡¼­ ¾ÆÆÄÄ¡ µîÀÇ º°µµÀÇ ¼ÒÇÁÆ®¿þ¾î ¾øÀÌ µ¿ÀÛÇÏ´Â °ÍÀÌ °¡´ÉÇÏ¸ç ÀÌ¸¦ ÅëÇØ À¥ ¼­¹öÀÇ µ¿ÀÛ¿¡ ÀÖ¾î ´õ ¸¹Àº ÅëÁ¦¸¦ °¡´ÉÄÉ ÇÑ´Ù.<br><br>ÃâÃ³:À§Å°¹é°ú
-									</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <!-- <strong>Client:</strong>
-                                            Threads -->
-                                        </li>
-                                        <li>
-                                           		 
-                                            
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- study page ÆË¾÷-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-					  <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-					  <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-					</svg></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">ÆÄÀÌ½ã</h2>
-                                    <p class="item-intro text-muted">Python</p>
-                                    <!-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                                     -->
-                                     <p>ÆÄÀÌ½ãÀº ÃÊº¸ÀÚºÎÅÍ Àü¹®°¡±îÁö »ç¿ëÀÚÃþÀ» º¸À¯ÇÏ°í ÀÖ´Ù. µ¿Àû Å¸ÀÌÇÎ(dynamic typing) ¹ü¿ë ÇÁ·Î±×·¡¹Ö ¾ð¾î·Î, ÆÞ ¹× ·çºñ¿Í ÀÚÁÖ ºñ±³µÈ´Ù. ´Ù¾çÇÑ ÇÃ·§Æû¿¡¼­ ¾µ ¼ö ÀÖ°í, ¶óÀÌºê·¯¸®(¸ðµâ)°¡ Ç³ºÎÇÏ¿©, ´ëÇÐÀ» ºñ·ÔÇÑ ¿©·¯ ±³À° ±â°ü, ¿¬±¸ ±â°ü ¹× »ê¾÷°è¿¡¼­ ÀÌ¿ëÀÌ Áõ°¡ÇÏ°í ÀÖ´Ù. ¶Ç ÆÄÀÌ½ãÀº ¼ø¼öÇÑ ÇÁ·Î±×·¥ ¾ð¾î·Î¼­ÀÇ ±â´É ¿Ü¿¡µµ ´Ù¸¥ ¾ð¾î·Î ¾²ÀÎ ¸ðµâµéÀ» ¿¬°áÇÏ´Â Ç®¾ð¾î(glue language)·Î½á ÀÚÁÖ ÀÌ¿ëµÈ´Ù. ½ÇÁ¦ ÆÄÀÌ½ãÀº ¸¹Àº »ó¿ë ÀÀ¿ë ÇÁ·Î±×·¥¿¡¼­ ½ºÅ©¸³Æ® ¾ð¾î·Î Ã¤¿ëµÇ°í ÀÖ´Ù. µµ¿ò¸» ¹®¼­µµ Á¤¸®°¡ Àß µÇ¾î ÀÖÀ¸¸ç, À¯´ÏÄÚµå ¹®ÀÚ¿­À» Áö¿øÇØ¼­ ´Ù¾çÇÑ ¾ð¾îÀÇ ¹®ÀÚ Ã³¸®¿¡µµ ´ÉÇÏ´Ù.<br><br>ÃâÃ³:À§Å°¹é°ú</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            
-                                        </li>
-                                        <li>
-                                            
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 3 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-					  <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-					  <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-					</svg></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">ÀÚ¹Ù</h2>
-                                    <p class="item-intro text-muted">Java</p>
-                                    <!-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                                     -->
-                                     <p>ÀÚ¹Ù(¿µ¾î: Java)´Â ½ã ¸¶ÀÌÅ©·Î½Ã½ºÅÛÁîÀÇ Á¦ÀÓ½º °í½½¸µ(James Gosling)°ú ´Ù¸¥ ¿¬±¸¿øµéÀÌ °³¹ßÇÑ °´Ã¼ ÁöÇâÀû ÇÁ·Î±×·¡¹Ö ¾ð¾îÀÌ´Ù. 1991³â ±×¸° ÇÁ·ÎÁ§Æ®(Green Project)¶ó´Â ÀÌ¸§À¸·Î ½ÃÀÛÇØ 1995³â¿¡ ¹ßÇ¥Çß´Ù. Ã³À½¿¡´Â °¡ÀüÁ¦Ç° ³»¿¡ Å¾ÀçÇØ µ¿ÀÛÇÏ´Â ÇÁ·Î±×·¥À» À§ÇØ °³¹ßÇßÁö¸¸ ÇöÀç À¥ ¾ÖÇÃ¸®ÄÉÀÌ¼Ç °³¹ß¿¡ °¡Àå ¸¹ÀÌ »ç¿ëÇÏ´Â ¾ð¾î °¡¿îµ¥ ÇÏ³ªÀÌ°í, ¸ð¹ÙÀÏ ±â±â¿ë ¼ÒÇÁÆ®¿þ¾î °³¹ß¿¡µµ ³Î¸® »ç¿ëÇÏ°í ÀÖ´Ù. ÇöÀç ¹öÀü 16±îÁö Ãâ½ÃÇß´Ù.<br><br>ÃâÃ³:À§Å°¹é°ú</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            
-                                        </li>
-                                        <li>
-                                            
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 4 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-					  <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-					  <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-					</svg></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">ÀÚ¹Ù½ºÅ©¸³Æ®</h2>
-                                    <p class="item-intro text-muted">JavaScript</p>
-                                    <!-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                     -->
-                                    <p>ÀÚ¹Ù½ºÅ©¸³Æ®(¿µ¾î: JavaScript)´Â °´Ã¼ ±â¹ÝÀÇ ½ºÅ©¸³Æ® ÇÁ·Î±×·¡¹Ö ¾ð¾îÀÌ´Ù. ÀÌ ¾ð¾î´Â À¥ ºê¶ó¿ìÀú ³»¿¡¼­ ÁÖ·Î »ç¿ëÇÏ¸ç, ´Ù¸¥ ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ ³»Àå °´Ã¼¿¡µµ Á¢±ÙÇÒ ¼ö ÀÖ´Â ±â´ÉÀ» °¡Áö°í ÀÖ´Ù. ¶ÇÇÑ Node.js¿Í °°Àº ·±Å¸ÀÓ È¯°æ°ú °°ÀÌ ¼­¹ö ÇÁ·Î±×·¡¹Ö¿¡µµ »ç¿ëµÇ°í ÀÖ´Ù. ÀÚ¹Ù½ºÅ©¸³Æ®´Â º»·¡ ³Ý½ºÄÉÀÌÇÁ Ä¿¹Â´ÏÄÉÀÌ¼ÇÁî ÄÚÆÛ·¹ÀÌ¼ÇÀÇ ºê·»´ø ¾ÆÀÌÅ©(Brendan Eich)°¡ Ã³À½¿¡´Â ¸ðÄ«(Mocha)¶ó´Â ÀÌ¸§À¸·Î, ³ªÁß¿¡´Â ¶óÀÌºê½ºÅ©¸³Æ®(LiveScript)¶ó´Â ÀÌ¸§À¸·Î °³¹ßÇÏ¿´À¸¸ç, ÃÖÁ¾ÀûÀ¸·Î ÀÚ¹Ù½ºÅ©¸³Æ®°¡ µÇ¾ú´Ù. ÀÚ¹Ù½ºÅ©¸³Æ®°¡ ½ã ¸¶ÀÌÅ©·Î½Ã½ºÅÛÁîÀÇ ÀÚ¹Ù¿Í ±¸¹®ÀÌ À¯»çÇÑ Á¡µµ ÀÖÁö¸¸, ÀÌ´Â »ç½Ç µÎ ¾ð¾î ¸ðµÎ C ¾ð¾îÀÇ ±âº» ±¸¹®¿¡ ¹ÙÅÁÀ» µ×±â ¶§¹®ÀÌ°í, ÀÚ¹Ù¿Í ÀÚ¹Ù½ºÅ©¸³Æ®´Â Á÷Á¢ÀûÀÎ ¿¬°ü¼ºÀº ¾àÇÏ´Ù. ÀÌ¸§°ú ±¸¹® ¿Ü¿¡´Â ÀÚ¹Ùº¸´Ù ¼¿ÇÁ³ª ½ºÅ´°ú À¯»ç¼ºÀÌ ¸¹´Ù. ÀÚ¹Ù½ºÅ©¸³Æ®´Â ECMA½ºÅ©¸³Æ®(ECMAScript)ÀÇ Ç¥ÁØ »ç¾çÀ» °¡Àå Àß ±¸ÇöÇÑ ¾ð¾î·Î ÀÎÁ¤¹Þ°í ÀÖÀ¸¸ç ECMAScript 5 (ES5) ±îÁö´Â ´ëºÎºÐÀÇ ºê¶ó¿ìÀú¿¡¼­ ±âº»ÀûÀ¸·Î Áö¿øµÇ¾úÀ¸³ª ECMAScript 6 ÀÌÈÄºÎÅÍ´Â ºê¶ó¿ìÀú È£È¯¼ºÀ» À§ÇØ Æ®·£½ºÆÄÀÏ·¯·Î ÄÄÆÄÀÏµÈ´Ù.<br><br>ÃâÃ³:À§Å°¹é°ú</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            
-                                        </li>
-                                        <li>
-                                            
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 5 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-					  <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-					  <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-					</svg></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">½ºÇÁ¸µ</h2>
-                                    <p class="item-intro text-muted">Spring</p>
-                                    <!-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                                     -->
-                                    <p>½ºÇÁ¸µ ÇÁ·¹ÀÓ¿öÅ©(¿µ¾î: Spring Framework)´Â ÀÚ¹Ù ÇÃ·§ÆûÀ» À§ÇÑ ¿ÀÇÂ ¼Ò½º ¾ÖÇÃ¸®ÄÉÀÌ¼Ç ÇÁ·¹ÀÓ¿öÅ©·Î¼­ °£´ÜÈ÷ ½ºÇÁ¸µ(Spring)ÀÌ¶ó°íµµ ÇÑ´Ù. µ¿ÀûÀÎ À¥ »çÀÌÆ®¸¦ °³¹ßÇÏ±â À§ÇÑ ¿©·¯ °¡Áö ¼­ºñ½º¸¦ Á¦°øÇÏ°í ÀÖ´Ù. ´ëÇÑ¹Î±¹ °ø°ø±â°üÀÇ À¥ ¼­ºñ½º °³¹ß ½Ã »ç¿ëÀ» ±ÇÀåÇÏ°í ÀÖ´Â ÀüÀÚÁ¤ºÎ Ç¥ÁØÇÁ·¹ÀÓ¿öÅ©ÀÇ ±â¹Ý ±â¼ú·Î¼­ ¾²ÀÌ°í ÀÖ´Ù.<br><br>ÃâÃ³:À§Å°¹é°ú</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            
-                                        </li>
-                                        <li>
-                                            
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 6 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-					  <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-					  <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-					</svg></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">ÄÚÆ²¸°</h2>
-                                    <p class="item-intro text-muted">Kotlin</p>
-                                    <!-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                                     -->
-                                    <p>ÄÚÆ²¸°(Kotlin)Àº JVM¿¡¼­ µ¿ÀÛÇÏ´Â Å©·Î½º ÇÃ·§Æû ¿ÀÇÂ¼Ò½º ÇÁ·Î±×·¡¹Ö ¾ð¾îÀÌ´Ù. 2011³â 7¿ù, Á¬ºê·¹ÀÎ»ç°¡ °ø°³ÇÏ¿´´Ù.
-									<br><
-									ÆÄÀÏ È®ÀåÀÚ´Â .kt ¶Ç´Â .kts¸¦ »ç¿ëÇÑ´Ù.
-									<br>
-									ÄÚÆ²¸°Àº 2019³â 5¿ù 7ÀÏ ÀÌÈÄ·Î ±¸±ÛÀÇ ¾Èµå·ÎÀÌµå ¾Û °³¹ß¿¡¼­ ¼±È£ÇÏ´Â ¾ð¾î°¡ µÇ¾ú´Ù.<br><br>ÃâÃ³:À§Å°¹é°ú</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            
-                                        </li>
-                                        <li>
-                                            
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="resources/js/scripts.js"></script>
+    <!-- Details Lightbox 2 -->
+    <div id="details-lightbox-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="container">
+            <div class="row">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">Ã—</button>
+                <div class="col-lg-8">
+                    <div class="image-container">
+                        <img class="img-fluid" src="resources/images/details-lightbox.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <h3>ìŠ¤í„°ë”” ë©¤ë²„ VS ìŠ¤í„°ë”” ë¦¬ë”</h3>
+                    <hr>
+                    <h5>Core service</h5>
+                    <p>ë§ˆìŒì— ë“œëŠ” ìŠ¤í„°ë””ë„ ë§Žì§€ë§Œ ì§ì ‘ ì›í•˜ëŠ” ìŠ¤í„°ë””ë¥¼ ë§Œë“¤ì–´ì„œ<br>
+                    ìš´ì˜í•´ë³´ëŠ” ê²ƒë„ ë˜ë‹¤ë¥¸ ì„±ì·¨ì¼ê±°ì˜ˆìš”!</p>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Automate user signup</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Quick formatting tools</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Fast email checking</div>
+                        </li>
+                    </ul>
+                    <a class="btn-solid-reg mfp-close" href="signup">SIGN UP</a> <a
+                        class="btn-outline-reg mfp-close as-button" href="#screenshots">ë‹«ê¸°</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of details lightbox 2 -->
 
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+    <!-- Details Lightbox 3 -->
+    <div id="details-lightbox-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="container">
+            <div class="row">
+                <button title="Close (Esc)" type="button" class="mfp-close x-button">Ã—</button>
+                <div class="col-lg-8">
+                    <div class="image-container">
+                        <img class="img-fluid" src="resources/images/details-lightbox.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <h3>ì·¨ì—…ë„ í•˜ê³ ì‹¶ì§€ë§Œ ê³µë¶€ë„ í•˜ê³ ì‹¶ë‹¤...!</h3>
+                    <hr>
+                    <h5>Core service</h5>
+                    <p>ë‹¤ë“¤ ê³µë¶€ë¥¼ ìœ„í•˜ì—¬ ìŠ¤í„°ë””ì— ê°€ìž…í•˜ì§€ë§Œ ê°œì¸ë§ˆë‹¤ êµ¬ì²´ì ì¸
+                        ëª©ì ì´ë‚˜ ì´ìœ ëŠ” ë‹¤ë¥¼ê±°ì˜ˆìš”. ëª¨ë“ ì´ì˜ ë§˜ì— ë“¤ê¸°ë¥¼ ë°”ë¼ë©´ì„œ
+                        ì±„ìš©ì´ ëª©ì ì´ë¼ë©´ ì±„ìš©ì‚¬ì´íŠ¸ë¥¼, ì†Œí†µì„ ì›í•˜ë©´ ìŠ¤í„°ë””ë£¸ ì°¾ê¸°ë¥¼
+                        ì´ìš©í•˜ë©´ì„œ í•­ìƒ ì¦ê±°ìš´ ì½”ë”©ì„ í•˜ê¸°ë¥¼ ë°”ëžë‹ˆë‹¤!
+                    </p>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Automate user signup</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Quick formatting tools</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Fast email checking</div>
+                        </li>
+                    </ul>
+                    <a class="btn-solid-reg mfp-close" href="signup">SIGN UP</a> <a
+                        class="btn-outline-reg mfp-close as-button" href="#screenshots">ë‹«ê¸°</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of details lightbox 3 -->
+    <!-- end of details lightboxes -->
+
+
+    <!-- Details -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h2>ìž, ì‹œê°„ì´ ë˜ì—ˆìŠµë‹ˆë‹¤. <br>ì½”ë¼ë¦¬ë¥¼ ì‹œìž‘í•´ë´…ì‹œë‹¤!</h2>
+                        <p></p>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Understand customers and meet their requirements</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Targeted client base with Tivo's efficient technology</div>
+                            </li>
+                        </ul>
+                        <a class="btn-solid-reg page-scroll" href="signup">SIGN UP</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img class="img-fluid" src="resources/images/details.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details -->
+
+
+    <!-- Video -->
+    <div id="video" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Video Preview -->
+                    <div class="image-container">
+                        <div class="video-wrapper">
+                            <a class="popup-youtube" href="https://www.youtube.com/watch?v=fLCjQJCekTs"
+                                data-effect="fadeIn">
+                                <img class="img-fluid" src="resources/images/video.png" alt="alternative">
+                                <span class="video-play-button">
+                                    <span></span>
+                                </span>
+                            </a>
+                        </div> <!-- end of video-wrapper -->
+                    </div> <!-- end of image-container -->
+                    <!-- end of video preview -->
+
+                    <div class="p-heading"></div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of video -->
+
+
+
+    <!-- Testimonials -->
+    <div class="slider-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="above-heading">FEATURES</div>
+                    <h2 class="h2-heading" id="h2-center">TEAM</h2>
+                    <br><br>
+
+                    <!-- Text Slider -->
+                    <div class="slider-container">
+                        <div class="swiper-container text-slider swiper-container-horizontal">
+                            <div class="swiper-wrapper"
+                                style="transform: translate3d(-1886px, 0px, 0px); transition-duration: 0ms;">
+                                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3"
+                                    style="width: 943px;">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="resources/images/kakao.png" alt="alternative">
+                                    </div> <!-- end of image-wrapper -->
+                                    <div class="text-wrapper">
+                                        <div class="testimonial-text">BackEnd Developer</div>
+                                    </div> <!-- end of text-wrapper -->
+                                </div>
+
+                                <!-- Slide -->
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0"
+                                    style="width: 943px;">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="resources/images/naver.png" alt="alternative">
+                                    </div> <!-- end of image-wrapper -->
+                                    <div class="text-wrapper">
+                                        <div class="testimonial-text">BackEnd Developer/Team Leader</div>
+                                        <div class="testimonial-author">ì´ìœ ê²½</div>
+                                    </div> <!-- end of text-wrapper -->
+                                </div> <!-- end of swiper-slide -->
+                                <!-- end of slide -->
+
+                                <!-- Slide -->
+                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1"
+                                    style="width: 943px;">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="resources/images/carrot.png" alt="alternative">
+                                    </div> <!-- end of image-wrapper -->
+                                    <div class="text-wrapper">
+                                        <div class="testimonial-text">BackEnd Developer</div>
+                                        <div class="testimonial-author">ìž„ì§€ìœ¤</div>
+                                    </div> <!-- end of text-wrapper -->
+                                </div> <!-- end of swiper-slide -->
+                                <!-- end of slide -->
+
+                                <!-- Slide -->
+                                <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2"
+                                    style="width: 943px;">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="resources/images/kakao.png" alt="alternative">
+                                    </div> <!-- end of image-wrapper -->
+                                    <div class="text-wrapper">
+                                        <div class="testimonial-text">FrontEnd Developer
+                                        </div>
+                                        <div class="testimonial-author">ìš°í˜œì§€</div>
+                                    </div> <!-- end of text-wrapper -->
+                                </div> <!-- end of swiper-slide -->
+                                <!-- end of slide -->
+
+                                <!-- Slide -->
+                                <div class="swiper-slide" data-swiper-slide-index="3" style="width: 943px;">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="resources/images/woo-ah.png" alt="alternative">
+                                    </div> <!-- end of image-wrapper -->
+                                    <div class="text-wrapper">
+                                        <div class="testimonial-text">BackEnd Developer</div>
+                                        <div class="testimonial-author">ì´í˜œì›</div>
+                                    </div> <!-- end of text-wrapper -->
+                                </div> <!-- end of swiper-slide -->
+                                <!-- end of slide -->
+
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                                    data-swiper-slide-index="0" style="width: 943px;">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="resources/images/naver.png" alt="alternative">
+                                    </div> <!-- end of image-wrapper -->
+                                    <div class="text-wrapper">
+                                        <div class="testimonial-text">BackEnd Developer</div>
+                                        <div class="testimonial-author">...</div>
+                                    </div> <!-- end of text-wrapper -->
+                                </div>
+                            </div> <!-- end of swiper-wrapper -->
+
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+                            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide">
+                            </div>
+                            <!-- end of add arrows -->
+
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div> <!-- end of swiper-container -->
+                    </div> <!-- end of slider-container -->
+                    <!-- end of text slider -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of slider-2 -->
+    <!-- end of testimonials -->
+
+
+    <!-- Newsletter -->
+    <div class="form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                        <div class="above-heading"></div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form -->
+    <!-- end of newsletter -->
+
+
+    <!-- Footer -->
+    <svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        viewBox="0 0 1920 79">
+        <defs>
+            <style>
+                .cls-2 {
+                    fill: #185ADB;
+                }
+            </style>
+        </defs>
+        <title>footer-frame</title>
+        <path class="cls-2"
+            d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z"
+            transform="translate(0 -0.188)"></path>
+    </svg>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col first">
+                        <h4>About KOGGIRI</h4>
+                        <p class="p-small">koggiri is world best of studysite.</p>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col middle">
+                        <h4>Important Links</h4>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Our business partners <a class="white"
+                                        href="#your-link">ë ìš©</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Read our <a class="white" href="terms-conditions.html">Terms
+                                        &amp; Conditions</a>, <a class="white" href="privacy-policy.html">Privacy
+                                        Policy</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col last">
+                        <h4>Contact</h4>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="media-body">South Korea, Home Ann Bang</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-envelope"></i>
+                                <div class="media-body"><a class="white"
+                                        href="mailto:contact@tivo.com">contact@tivo.com</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->
+    <!-- end of footer -->
+
+    <!--ì—¬ê¸° ì ìš© ëª»í•¨. ì—ëŸ¬ë•Œë¬¸ì—-->
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright Â© 2020 <a href="https://inovatik.com">Template by Inovatik</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+
+
+    <!-- Scripts -->
+    <script src="resources/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="resources/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="resources/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="resources/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="resources/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="resources/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="resources/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="resources/js/scripts.js"></script> <!-- Custom scripts -->
+
+</body>
+
 </html>
