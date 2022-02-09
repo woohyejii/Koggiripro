@@ -20,7 +20,7 @@
     <meta property="og:type" content="article">
 
     <!-- Website Title -->
-    <title>Koggiri-studymate</title>
+    <title>Koggiri-studymate_home</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;display=swap&amp;subset=latin-ext"
