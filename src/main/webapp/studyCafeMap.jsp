@@ -74,17 +74,17 @@
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 </style>
 </head>
-<body>
+<body data-spy="scroll" data-target=".fixed-top">
 
    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" style="background-color:#185ADB; height:74px;">
         <div class="container">
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="resources/images/logo-001.svg" alt="alternative"></a>
+            <a class="navbar-brand logo-image" href="index.jsp"><img src="resources/images/logo-001.svg" alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -97,7 +97,7 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll active" href="#header">HOME <span
+                        <a class="nav-link page-scroll" href="index.jsp">HOME <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -119,7 +119,7 @@
                     <!-- end of dropdown menu -->
 
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="studyCafeMap.jsp">지도</a>
+                        <a class="nav-link page-scroll active" href="studyCafeMap.jsp">지도</a>
                     </li>
                     
                     <li class="nav-item">
@@ -154,7 +154,10 @@
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
-<div class="map_wrap">
+    
+    
+    
+<div class="map_wrap" style="top:100px;width:1500px;left:150px;height:570px;">
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
     <div id="menu_wrap" class="bg_white">
