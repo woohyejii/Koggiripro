@@ -43,6 +43,92 @@
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 </style>
 </head>
+<body>
+<div class="map_wrap">
+<body data-spy="scroll" data-target=".fixed-top">
+
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" style="background-color:#185ADB; height:74px;">
+        <div class="container">
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="index.jsp"><img src="resources/images/logo-001.svg" alt="alternative"></a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+            <!-- end of mobile menu toggle button -->
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.jsp">HOME <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="home">스터디</a>
+                    </li>
+
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle page-scroll" href="#" id="navbarDropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">채용</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://www.wanted.co.kr/"><span class="item-text">원티드</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="https://www.jobkorea.co.kr/"><span class="item-text">잡코리아</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="https://www.saramin.co.kr"><span class="item-text">사람인</span></a>
+                        </div>
+                    </li>
+                    <!-- end of dropdown menu -->
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll active" href="studyCafeMap.jsp">지도</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="faq.jsp">FAQ</a>
+                    </li>
+                </ul>
+                
+                <%
+                  //로그인된 아이디가 있는지 확인
+                  String name=(String)session.getAttribute("namekey");
+                  int userNo=(Integer)session.getAttribute("userNo");
+                %>
+                <%if(name==null){ %>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="login">로그인</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="signup">회원가입</a>
+                </span>
+                <%}else{ %>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="alarmList?userNo=${userNo }">알림</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="javascript:void(0);" onclick="javascript:frm.submit();">마이페이지</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="logout">로그아웃</a>
+                </span>
+                <%} %>
+            </div>
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    
+    
+    
+<div class="map_wrap" style="top:100px;width:80%;height:570px; margin: 0 auto;">
 
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
