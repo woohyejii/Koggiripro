@@ -27,7 +27,6 @@ window.onload = function() {
 		}
 	
 }
-	
 </script>
 </head>
 <body>
