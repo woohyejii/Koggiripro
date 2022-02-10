@@ -43,8 +43,7 @@
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 </style>
 </head>
-<body>
-<div class="map_wrap">
+
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
     <div id="menu_wrap" class="bg_white">
