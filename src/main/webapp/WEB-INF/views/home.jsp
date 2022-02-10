@@ -154,44 +154,59 @@
    <hr />
    <div style="float:right;margin:50px;">
      <%if(name!=null){ %>
-      <button id="insertStudy" onclick="location.href='newStudyForm?userNo=${userNo}';">스터디 생성</button>
+      <button id="insertStudy" onclick="location.href='newStudyForm?userNo=${userNo};'">스터디 생성</button>
      <%}%>
      </div>
    
-   <script>
+<script>
    
-      //스터디 정보 보여주기
-      function show(StudyData){
-         
-         let str=""
+//스터디 정보 보여주기
+function show(StudyData){
+      
+      let str=`<div id="main">
+		<div class="inner">
+   	<section class="tiles">`;
 
-         let count = 0;
-         let list = StudyData.datas;
-         $(list).each(function(index, obj){
-            str +=`<div onclick="location.href='studyDetail?studyNo=` + obj.studyNo + `';">`
-            str +=obj.studyName;
-            str +=obj.language;
-            str +=obj.nowPeopleNum +"/"+ obj.maxPeopleNum;
-            str +="<br />"
-            str +="</div>"
-            count++;
-         });
-         if(count==0) str = "검색된 스터디가 없습니다."
-         $("#showStudy").html(str);
-      }
+      let count = 0;
+      let list = StudyData.datas;
+      $(list).each(function(index, obj){
+    	  str+=`<article class='style`+(index%6+1)+`'>
+    	  		
+          		<span class='image'>`
+
+        	 str +=`<img src="./resources/images/pic0`+(index%6+1)+`.jpg" alt=''/>
+        		 </span>`
+	        str+=`<a href="studyDetail?studyNo=`+obj.studyNo +`";>
+	        <h2>`+obj.studyName+`</h2>`;
+	        str+=`<div class="content">`
+         obj.language;
+	        `"<br />"
+         	인원:`+obj.nowPeopleNum +`/`+ obj.maxPeopleNum;
+         	str+=` </div></a></article>`
+         count++;
+      });
+      str+=`
+          </section>
+          </div>
+       </div>`;
+      
+      if(count==0) str = "검색된 스터디가 없습니다."
+      $("#showStudy").html(str);
+}
+   
    
    
       //var path = "./resources/img/Language/JAVA.jpg" + "?" +Date.now();
       //$("#JAVA").attr('src', path);
    
-      //스터디 검색 버튼
-      $("#searchStudyBtn").click(function(){
+//스터디 검색 버튼
+$("#searchStudyBtn").click(function(){
          if ($("#searchValue").val()==""){
             alert('검색어를 입력해주세요.');
          }
          else{
             $("#showStudy").empty();
-            let str=""
+            // let str=""
             $.ajax({
                type:"get",
                url:"searchStudy?searchOption="+$('#searchOption option:selected').val()+ "&searchValue="+$('#searchValue').val(),
@@ -200,10 +215,10 @@
                   show(StudyData)
                },
                error:function(){
-                  alert("searchStudyBtn click error")
+                  alert("searchStudyBtn click error");
                   $("#showStudy").text("에러");
                }
-            })
+            });
             
             $(".img").each(function (index, item) {
                $(this).removeClass("able");
@@ -215,35 +230,10 @@
             console.log(langList);
             
          }
+});
 
-/*          $.ajax({
-            type:"get",
-            url:"searchStudy?searchOption="+$('#searchOption option:selected').val()+ "&searchValue="+$('#searchValue').val(),
-            dataType:"json",
-            success:function(StudyData){
-               console.log(StudyData);
-               let count = 0;
-               let list = StudyData.datas;
-               console.log(list);
-               $(list).each(function(index, obj){
-                  str += obj.studyName;
-                  str +=obj.language;
-                  str +=obj.nowPeopleNum +"/"+ obj.maxPeopleNum;
-                  str +="<br />"
-                  count++;
-               });
-               if(count==0) str = "검색된 스터디가 없습니다."
-               $("#showStudy").html(str);
-            },
-            error:function(){
-               alert("searchStudyBtn click error")
-               $("#showStudy").text("검색된 스터디가 없습니다.");
-            }
-         }) */
-      });
-
-      let langList = new Array();
-      $(".img").click(function(){//이미지를 클릭했을때
+let langList = new Array();
+$(".img").click(function(){//이미지를 클릭했을때
          
          $("#searchValue").val('');
          
@@ -261,7 +251,7 @@
          }
          
          if (langList.length != 0){
-            let str=""
+            let str="";
             $.ajax({
                type:"post",
                url:"imgBtnClick",
@@ -276,9 +266,9 @@
                   alert("버튼을 클릭해주세요.");
                   $("#showStudy").text("검색된 스터디가 없습니다.");
                }
-            })
+            });
          }else{
-            let str=""
+            let str="";
             $.ajax({
                type:"get",
                url:"imgBtnClick",
@@ -290,12 +280,9 @@
                   alert("버튼을 클릭해주세요.");
                   $("#showStudy").text("검색된 스터디가 없습니다.");
                }
-            })
-         }
-
-         
-      });
-      
+            });
+         } 
+      }); 
    </script>
    
    <div id="showStudy">
@@ -312,30 +299,10 @@
                <!-- Main -->
                   <div id="main">
                      <div class="inner">
-                        <section class="tiles">
-                     
-                        
-                           <%-- <c:forEach var="tmp" items="${study}"  varStatus="status">
-                           
-                                    <article class="style${status.index%6+1}"> <script></script>
-                                       <span class="image">
-                                          <img src="./resources/images/pic0${status.index%6+1}.jpg" alt="" />
-                                       </span>
-                                       <a href="studyDetail?studyNo=${tmp.studyNo}">
-                                          <h2>${tmp.studyName }</h2>
-                                          <div class="content">
-                                             ${tmp.language }
-                                             <br/>
-                                             인원: ${tmp.nowPeopleNum }/${tmp.maxPeopleNum }
-                                       
-                                       </div></a>
-                                    </article>
-                           </c:forEach>          --%>
-                           
-                           
+                        <section class="tiles"> 
                            <c:choose>                                                      
                                <c:when test="${fn:length(study) == 0}">
-                                      조회결과가 없습니다.
+                                      	조회결과가 없습니다.
                                </c:when>
                                <c:otherwise>
                                    <c:forEach var="tmp" items="${study}"  varStatus="status">
