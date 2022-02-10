@@ -1,15 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
 pageEncoding="UTF-8"%> 
+<!DOCTYPE html>
 <html>
 <head>
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Heroic Features - Start Bootstrap Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="./resources/assets/css/main.css" />
-    <!-- Styles -->
+         <meta name="description"
+        	content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
+       <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content=""> <!-- website name -->
+    <meta property="og:site" content=""> <!-- website link -->
+    <meta property="og:title" content=""> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content=""> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content=""> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content=""> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article">
+
+    <!-- Website Title -->
+    <title>Koggiri-studymate</title>
+     
+     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;display=swap&amp;subset=latin-ext"
         rel="stylesheet">
     <link href="resources/css/bootstrap.css" rel="stylesheet">
@@ -17,8 +29,15 @@ pageEncoding="UTF-8"%>
     <link href="resources/css/swiper.css" rel="stylesheet">
     <link href="resources/css/magnific-popup.css" rel="stylesheet">
     <link href="resources/css/styles.css" rel="stylesheet">
+    
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="resources/css/styles.css" rel="stylesheet"/>
 
-    <title>스터디</title>
+<title>Insert title here</title>
 <style>
 @font-face {
     font-family: 'IBMPlexSansKR-Regular';
@@ -89,11 +108,15 @@ body{font-family:'IBMPlexSansKR-Regular' }
 
 h1{text-align:center;}
 
+
 </style>
 </head>
+
+
 <body data-spy="scroll" data-target=".fixed-top">
-     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+
+ <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" style="background-color:#185ADB; height:74px;">
         <div class="container">
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
@@ -113,11 +136,11 @@ h1{text-align:center;}
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll active" href="index.jsp">HOME <span
+                        <a class="nav-link page-scroll" href="index.jsp">HOME <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="home">스터디</a>
+                        <a class="nav-link page-scroll active" href="home">스터디</a>
                     </li>
 
                     <!-- Dropdown Menu -->
@@ -142,76 +165,68 @@ h1{text-align:center;}
                         <a class="nav-link page-scroll" href="faq.jsp">FAQ</a>
                     </li>
                 </ul>
-    <%
-      //로그인된 아이디가 있는지 확인
-      String name=(String)session.getAttribute("namekey");
-      int userNo=(Integer)session.getAttribute("userNo");
-    %>
-    <%if(name==null){ %>
-    <span class="nav-item">
-        <a class="btn-outline-sm" href="login">로그인</a>
-    </span>
-    <span class="nav-item">
-        <a class="btn-outline-sm" href="signup">회원가입</a>
-    </span>
-    <%}else{ %>
-    <span class="nav-item">
-        <a class="btn-outline-sm" href="alarmList?userNo=${userNo }">알림</a>
-    </span>
-    <span class="nav-item">
-        <a class="btn-outline-sm" href="javascript:void(0);" onclick="javascript:frm.submit();">마이페이지</a>
-    </span>
-    <span class="nav-item">
-        <a class="btn-outline-sm" href="logout">로그아웃</a>
-    </span>
-    <%} %>
-</div>
-</div> <!-- end of container -->
-</nav> <!-- end of navbar -->
-<!-- end of navigation -->
-   
+                
+                <%
+                  //로그인된 아이디가 있는지 확인
+                  String name=(String)session.getAttribute("namekey");
+                  int userNo=(Integer)session.getAttribute("userNo");
+                %>
+                <%if(name==null){ %>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="login">로그인</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="signup">회원가입</a>
+                </span>
+                <%}else{ %>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="alarmList?userNo=${userNo }">알림</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="javascript:void(0);" onclick="javascript:frm.submit();">마이페이지</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="logout">로그아웃</a>
+                </span>
+                <%} %>
+            </div>
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
     <!-- Header -->
     <header id="header" class="ex-header">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>ㅇㅋㅇㅋ</h1>
+                    <h1>FAQ</h1>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </header> <!-- end of ex-header -->
     <!-- end of header -->
-    
-    
+
+
     <!-- Breadcrumbs (홈-현재페이지)-->
     <div class="ex-basic-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumbs">
-                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>스터디</span>
+                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>FAQ</span>
                     </div> <!-- end of breadcrumbs -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of ex-basic-1 -->
     <!-- end of breadcrumbs -->
-    <br /> <br />
-               
 
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="resources/js/info.js"></script>
-<script src="resources/js/scripts.js"></script>
-            </div>
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
-    
-    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="resources/js/info.js"></script>
+        <script src="resources/js/scripts.js"></script>
         
-
 <h1 id="title">**자주 묻는 질문(FAQ)**</h1>
 <ul class="qna">
             <li>
@@ -269,13 +284,13 @@ h1{text-align:center;}
                   </div>
             </li>
         </ul>
- <!-- Breadcrumbs (홈-현재페이지)-->
+  <!-- Breadcrumbs (홈-현재페이지)-->
     <div class="ex-basic-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumbs">
-                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>스터디</span>
+                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>FAQ</span>
                     </div> <!-- end of breadcrumbs -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -362,20 +377,5 @@ h1{text-align:center;}
         </div> <!-- end of container -->
     </div> <!-- end of copyright -->
     <!-- end of copyright -->
-   <!-- Scripts -->
-         <script src="./resources/assets/js/jquery.min.js"></script>
-         <script src="./resources/assets/js/browser.min.js"></script>
-         <script src="./resources/assets/js/breakpoints.min.js"></script>
-         <script src="./resources/assets/js/util.js"></script>
-         <script src="./resources/assets/js/main.js"></script>
-		 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-		 <script src="http://code.jquery.com/jquery-latest.min.js"></script>  
-    	 <script src="resources/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    	 <script src="resources/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    	 <script src="resources/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-     	 <script src="resources/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    	 <script src="resources/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    	 <script src="resources/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    	 <script src="resources/js/scripts.js"></script> <!-- Custom scripts -->
 </body>
 </html>

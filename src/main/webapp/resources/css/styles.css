@@ -837,7 +837,7 @@ input[type='checkbox'] {
 	height: 2.25rem;
 }
 
-/* header css ÔøΩÔøΩÔßûÍ≥∏Ïî†ÔøΩÎíó css*/
+/* header css ÔøΩÔøΩÔßûÍ≥∏?î†ÔøΩÎíó css*/
 
 
 .frame {
@@ -1168,10 +1168,42 @@ input[type='checkbox'] {
     }
 }
 
+/*************************/
+/* FAQ  */
 
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{font-family:'IBMPlexSansKR-Regular' }
+
+.layout{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.qna{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.qna > li{
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+.qna > li:nth-child(n+2){ /* æ∆¿Ã≈€ ±∏∫– ¡°º± */
+  border-top: 1px dashed #aaa;
+}
+.qna input {
+  display: none;
+}
 /*************************/
 /*     05. Customers     */
 /*************************/
+
 .slider-1 {
 	padding-top: 5rem;
 	padding-bottom: 3.25rem;
