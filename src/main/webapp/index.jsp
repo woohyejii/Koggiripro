@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+pageEncoding="UTF-8"%> 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -37,8 +39,8 @@
     <script src="https://kit.fontawesome.com/cc41398456.js" crossorigin="anonymous"></script>
 </head>
 
-<body data-spy="scroll" data-target=".fixed-top">
-<a href="body" class="back-to-top page-scroll" style="display: none;">Back to Top</a>
+<body data-spy="scroll" data-target=".fixed-top"><a href="body" class="back-to-top page-scroll"
+        style="display: none;">Back to Top</a>
 
         <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
@@ -77,7 +79,7 @@
                             <div class="dropdown-items-divide-hr"></div>
                             <a class="dropdown-item" href="https://www.jobkorea.co.kr/"><span class="item-text">잡코리아</span></a>
                             <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="https://www.saramin.co.kr"><span class="item-text">사람인</span></a>
+                            <a class="dropdown-item" href="https://www.saramin.co.kr/zf_user/"><span class="item-text">사람인</span></a>
                         </div>
                     </li>
                     <!-- end of dropdown menu -->
@@ -90,40 +92,17 @@
                         <a class="nav-link page-scroll" href="faq.jsp">FAQ</a>
                     </li>
                 </ul>
-                
-                <%
-                  //로그인된 아이디가 있는지 확인
-                  String name=(String)session.getAttribute("namekey");
-                  int userNo=(Integer)session.getAttribute("userNo");
-                %>
-                <%if(name==null){ %>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="login">로그인</a>
                 </span>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="signup">회원가입</a>
                 </span>
-                <%}else{ %>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="alarmList?userNo=${userNo }">알림</a>
-                </span>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="javascript:void(0);" onclick="javascript:frm.submit();">마이페이지</a>
-                </span>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="logout">로그아웃</a>
-                </span>
-                <%} %>
             </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
-    
-    
-	<!-- 마이페이지 이동 -->
-	<form action="mypage" method="post" name="frm">
-	<input type="hidden" name="userNo" value=${userNo}>
-	</form>
+
 
     <!-- Header -->
     <header id="header" class="header">
@@ -841,7 +820,7 @@
     </div> <!-- end of footer -->
     <!-- end of footer -->
 
-    <!--여기 적용 못함. 에러때문에-->
+
     <!-- Copyright -->
     <div class="copyright">
         <div class="container">

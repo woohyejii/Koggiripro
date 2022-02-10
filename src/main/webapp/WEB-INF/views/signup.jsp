@@ -20,7 +20,7 @@
 	<meta property="og:type" content="article" />
 
 	<!-- Website Title -->
-    <title>Sign Up - Tivo - SaaS App HTML Landing Page Template</title>
+    <title>Sign Up</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;display=swap&amp;subset=latin-ext"
@@ -30,7 +30,9 @@
     <link href="resources/css/swiper.css" rel="stylesheet">
     <link href="resources/css/magnific-popup.css" rel="stylesheet">
     <link href="resources/css/styles.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+	crossorigin="anonymous">
 	
 	<!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
@@ -301,7 +303,8 @@ function checkData(){
                                 <label class="label-control" for="semail" >아이디</label>
                                 <div class="help-block with-errors"></div>
                                 <br>
-                                <button class="w-100 btn btn-lg btn-secondary" type="button" value="회원가입" id="btnId">중복확인</button>
+                                <button type="button" class="form-control-submit-button" value="sign-up" id="btnId">
+                                    중복확인</button>
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control-input" name="password" id="password" id="spassword" required>
@@ -318,11 +321,12 @@ function checkData(){
                                 <label class="label-control" for="sname">닉네임</label>
                                 <div class="help-block with-errors"></div>
                                 <br>
-                                <button class="w-100 btn btn-lg btn-secondary" type="button" value="회원가입" id="btnName">중복확인</button>
+                                 <button type="button" class="form-control-submit-button" value="sign-up" id="btnId">
+                                    중복확인</button>
                             </div>
                             <div class="form-group">
                             <label>비밀번호 확인 질문</label>
-						   	<select name="hint">
+						   	<select name="hint" class="hint" >
 						   		<option value="hint_01">자신의 인생 좌우명은?</option>
 						   		<option value="hint_02">자신의 보물 제1호는?</option>
 						   		<option value="hint_03">가장 기억에 남는 선생님 성함은?</option>
@@ -338,6 +342,7 @@ function checkData(){
 							
 							<div class="form-group">
 							<label>비밀번호 확인 답변</label>
+							<br>
 						   	<input type="text" name="answer" id="answer">
                             </div>
                             
@@ -367,6 +372,11 @@ function checkData(){
     <script src="resources/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="resources/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="resources/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+	crossorigin="anonymous"></script>
    
 
 </form>
