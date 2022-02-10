@@ -69,7 +69,7 @@ function enterkey() {
 </script>
 
 <body data-spy="scroll" data-target=".fixed-top">
-    
+   
     
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
@@ -92,7 +92,7 @@ function enterkey() {
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll active" href="index.jsp">HOME <span
+                        <a class="nav-link page-scroll active" href="#header">HOME <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">

@@ -205,7 +205,7 @@ function checkData(){
 </script>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
-
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
@@ -214,7 +214,7 @@ function checkData(){
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.jsp"><img src="resources/images/logo-001.svg" alt="alternative"></a>
+            <a class="navbar-brand logo-image" href="index.html"><img src="resources/images/logo-001.svg" alt="alternative"></a>
 
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -227,7 +227,7 @@ function checkData(){
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll active" href="index.jsp">HOME <span
+                        <a class="nav-link page-scroll active" href="#header">HOME <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -301,7 +301,7 @@ function checkData(){
                                 <label class="label-control" for="semail" >아이디</label>
                                 <div class="help-block with-errors"></div>
                                 <br>
-                                <button type="button" id="btnIns" class="form-control-submit-button" value="회원가입">중복확인</button>
+                                <button class="w-100 btn btn-lg btn-secondary" type="button" value="회원가입" id="btnId">중복확인</button>
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control-input" name="password" id="password" id="spassword" required>
@@ -318,12 +318,11 @@ function checkData(){
                                 <label class="label-control" for="sname">닉네임</label>
                                 <div class="help-block with-errors"></div>
                                 <br>
-                                 <button type="button" id="btnIns" class="form-control-submit-button" value="회원가입">중복확인</button>
+                                <button class="w-100 btn btn-lg btn-secondary" type="button" value="회원가입" id="btnName">중복확인</button>
                             </div>
                             <div class="form-group">
                             <label>비밀번호 확인 질문</label>
-                            <br>
-						   	<select name="hint" class="hint">
+						   	<select name="hint">
 						   		<option value="hint_01">자신의 인생 좌우명은?</option>
 						   		<option value="hint_02">자신의 보물 제1호는?</option>
 						   		<option value="hint_03">가장 기억에 남는 선생님 성함은?</option>
@@ -338,8 +337,7 @@ function checkData(){
 							</div>
 							
 							<div class="form-group">
-							<label class="anwser">비밀번호 확인 답변</label>
-							<br>
+							<label>비밀번호 확인 답변</label>
 						   	<input type="text" name="answer" id="answer">
                             </div>
                             

@@ -1,4 +1,4 @@
-/* Template: Tivo - SaaS App HTML Landing Page Template
+	/* Template: Tivo - SaaS App HTML Landing Page Template
    Author: Inovatik
    Created: Sep 2019
    Description: Master CSS file
@@ -837,7 +837,7 @@ input[type='checkbox'] {
 	height: 2.25rem;
 }
 
-/* header css ???직이?�� css*/
+/* header css ��吏곸씠�뒗 css*/
 
 
 .frame {
@@ -1946,28 +1946,6 @@ a:hover.back-to-top {
 
 .ex-2-header .checkbox {
 	text-align: left;
-}
-
-.hint{
-  width: 300px;
-  height: 35px;
-  background:url(https://jennifergreen.sg/wp-content/uploads/2019/05/Down-Arrow-PNG-HD.png)calc(100% - 5px) center no-repeat;
-  background-size: 20px;
-  padding: 5px 30px 5px 10px;
-  border-radius: 4px;
-  outline: 0 none;
-}
-
-.hint option {
-  background: black;
-  color: #fff;
-  padding: 3px 0;
-}
-.anwser{
-  width: 300px;
-  height: 35px;
-  border-radius: 4px;
-  outline: 0 none;
 }
 
 
