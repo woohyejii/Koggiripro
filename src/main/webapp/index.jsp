@@ -603,24 +603,14 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2>자, 시간이 되었습니다. <br>코끼리를 시작해봅시다!</h2>
-                        <p></p>
-                        <ul class="list-unstyled li-space-lg">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Understand customers and meet their requirements</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Targeted client base with Tivo's efficient technology</div>
-                            </li>
-                        </ul>
-                        <a class="btn-solid-reg page-scroll" href="signup">SIGN UP</a>
+                        <h1>자, 시간이 되었습니다. <br>코끼리를 시작해봅시다!</h1>
+                        <br><br>
+                       <a class="btn-solid-reg page-scroll" href="signup">SIGN UP</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="resources/images/details.png" alt="alternative">
+                        <img class="img-fluid" src="resources/images/start.png" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
