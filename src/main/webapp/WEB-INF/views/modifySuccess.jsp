@@ -11,7 +11,7 @@
 %>
 <script>
 alert("수정이 완료되었습니다!");
-location.href="mypage?userNo=<%=userNo %>";
+location.href="index.jsp";
 </script>
 </head>
 <body>

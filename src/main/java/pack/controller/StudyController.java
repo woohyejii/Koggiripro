@@ -67,7 +67,7 @@ public class StudyController {
 		andView.addObject("study", study);
 		return andView;
 	}
-	
+
 	//스터디 검색하기
 	@RequestMapping(value = "searchStudy", method = RequestMethod.GET)
 	@ResponseBody
@@ -104,7 +104,6 @@ public class StudyController {
 		System.out.println(studyLists);
 		return studyLists;
 	}
-	
 
 	//스터디 목록에서 이미지 클릭하기
 	@RequestMapping(value = "imgBtnClick", method = RequestMethod.POST)

@@ -16,16 +16,29 @@ window.onpageshow = function(event) {
    }
 }
 </script>
+
+<!-- Styles -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;display=swap&amp;subset=latin-ext"
+    rel="stylesheet">
+<link href="resources/css/bootstrap.css" rel="stylesheet">
+<link href="resources/css/fontawesome-all.css" rel="stylesheet">
+<link href="resources/css/swiper.css" rel="stylesheet">
+<link href="resources/css/magnific-popup.css" rel="stylesheet">
+<link href="resources/css/styles.css" rel="stylesheet">
+
+<!-- Favicon-->
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<!-- Bootstrap icons-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="resources/css/styles.css" rel="stylesheet"/>
+
 </head>
 <script>
 //현재 비밀번호가 정확한지 확인하는 용도
 let pwd=0;
 
 window.onload=function(){
-	
-	
-
-	
 	
 	pwd=0;
 	
@@ -41,16 +54,11 @@ window.onload=function(){
 
 }
 
-
-
-
-
 function deleteUser1(){
 	checknowPwd1();
 	if(pwd!=1){
 		return false;
 	}
-	
 	
 	if(confirm("정말로 탈퇴 하시겠습니까?\n탈퇴시 계정 복구는 불가합니다.")==true){
 		let userNo=document.querySelector(".userNo").value;
@@ -208,20 +216,108 @@ function inputName(nName){
 
 </script>
 <body>
+ <!-- Navigation -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" style="background-color:#185ADB; height:74px;">
+        <div class="container">
 
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
-<%
-	//로그인된 아이디가 있는지 확인
-	String name = (String) session.getAttribute("namekey");
-	int userNo = (Integer) session.getAttribute("userNo");
-%>
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="index.jsp"><img src="resources/images/logo-001.svg" alt="alternative"></a>
 
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+            <!-- end of mobile menu toggle button -->
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.jsp">HOME <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll active" href="home">스터디</a>
+                    </li>
+
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle page-scroll" href="#" id="navbarDropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">채용</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://www.wanted.co.kr/"><span class="item-text">원티드</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="https://www.jobkorea.co.kr/"><span class="item-text">잡코리아</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="https://www.saramin.co.kr"><span class="item-text">사람인</span></a>
+                        </div>
+                    </li>
+                    <!-- end of dropdown menu -->
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="studyCafeMap.jsp">지도</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="faq.jsp">FAQ</a>
+                    </li>
+                </ul>
+                
+                <%
+                  //로그인된 아이디가 있는지 확인
+                  String name=(String)session.getAttribute("namekey");
+                  int userNo=(Integer)session.getAttribute("userNo");
+                %>
+                <%if(name==null){ %>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="login">로그인</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="signup">회원가입</a>
+                </span>
+                <%}else{ %>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="alarmList?userNo=${userNo }">알림</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="javascript:void(0);" onclick="javascript:frm.submit();">마이페이지</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="logout">로그아웃</a>
+                </span>
+                <%} %>
+            </div>
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+<!-- 마이페이지 이동 --> 
+<!-- Header -->
+    <header id="header" class="ex-header" style="padding-bottom:100px; padding-top:130px; margin-bottom:100px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>마이페이지</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+<form action="mypage" method="post" name="frm4">
+<input type="hidden" name="userNo" value=${userNo}>
+</form>
+
+<center>
 <h2>회원 정보 수정</h2>
 
 <form action="modifySuccess" method="post" name="frm">
 <input type="hidden" name="userNo" class="userNo" value=<%=userNo %>>
 <input type="hidden" name="id" value=${ubean.id }>
-	<table>
+	<table style="margin-left:40px; margin-top:40px;">
 		<tr>
 			<td>아이디</td>
 			<td><input type="text" value=${ubean.id } disabled></td>
@@ -245,7 +341,7 @@ function inputName(nName){
 			<td><input type="button" value="닉네임 변경" id="btnName"></td>
 		</tr>
 		<tr>
-			<td colspan="2" align="center">
+			<td colspan="2" align="center" style="padding-top:20px; padding-left:50px;">
 				<input type="button" value="회원정보수정" id="btnModify">
 				<input type="button" value="취소" onclick="location.href='index.jsp'">
 			</td>
@@ -253,7 +349,7 @@ function inputName(nName){
 	</table>
 </form>
 
-<input type="button" value="회원탈퇴" id="deleteUser">
-
+<input type="button" value="회원탈퇴" id="deleteUser" style="margin-right:350px;">
+</center>
 </body>
 </html>

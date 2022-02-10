@@ -177,13 +177,17 @@ public class ModifyController {
 	//회원 탈퇴하기
 	@RequestMapping(value="deleteUser", method=RequestMethod.POST)
 	@ResponseBody
-	public Map<String,String> deleteUser(@RequestParam("userNo")int userNo){
+	public Map<String,String> deleteUser
+			(@RequestParam("userNo")int userNo,
+			HttpSession session){
 		boolean b=daoInter.deleteUser(userNo);
 		
 		
 		Map<String, String> map=new HashMap<String, String>();
 		
 		if(b) {
+			session.removeAttribute("namekey");
+			session.removeAttribute("userNo");
 			System.out.println("탈퇴가 정상처리되었습니다.");
 			map.put("result", "y");
 			System.out.println(map);

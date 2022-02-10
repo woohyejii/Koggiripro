@@ -305,26 +305,29 @@ public class MyStudyController {
 	
 	//스터디 삭제하기
 	@RequestMapping(value="removeStudy",method=RequestMethod.POST)
-	public String removeStudy(StudyBoardBean bean) {
+	public ModelAndView removeStudy(StudyBoardBean bean) {
 		int studyNo = bean.getStudyNo();
 		int nowP=sdinter.selectNowPeople(studyNo);
 		//System.out.println("nowP결과 값 : "+nowP+" "+studyNo);
 		
 		
 		if(nowP==1) {
-			
+			ModelAndView andView=new ModelAndView("../../index");
 			boolean result = inter.removeStudy(studyNo);
 			if(result) { 
 				System.out.println("체크");
-				return "redirect:/mypage?userNo="+bean.getUserNo();
+				return andView;
 			}
 			else {
+				ModelAndView andView2=new ModelAndView("err");
 				System.out.println("에러");
-				return "err";
+				return andView2;
 			}
 			
 		}else {
-			return "redirect:/remove_study?studyNo="+studyNo;
+			ModelAndView andView=new ModelAndView("remove_study");
+			andView.addObject("studyNo",studyNo);
+			return andView;
 			
 		}
 	}
@@ -400,7 +403,7 @@ public class MyStudyController {
 		
 		if(result && result2) { 
 			System.out.println("체크");
-			return "redirect:/mypage?userNo="+bean.getUserNo();
+			return "../../index";
 			//return "home";
 		}
 		else {
