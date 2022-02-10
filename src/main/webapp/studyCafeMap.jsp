@@ -157,7 +157,7 @@
     
     
     
-<div class="map_wrap" style="top:100px;width:1500px;left:150px;height:570px;">
+<div class="map_wrap" style="top:100px;width:80%;height:570px; margin: 0 auto;">
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
     <div id="menu_wrap" class="bg_white">
