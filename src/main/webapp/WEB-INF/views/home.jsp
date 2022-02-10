@@ -126,6 +126,10 @@
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
 
+   	<!-- 마이페이지 이동 -->
+	<form action="mypage" method="post" name="frm">
+	<input type="hidden" name="userNo" value=${userNo}>
+	</form>
    
     <br /> <br />
    <div style="text-align:center;margin-top:50px;">
