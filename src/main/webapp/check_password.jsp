@@ -144,7 +144,6 @@ function checkData(){
 <h2><a href="javascript:void(0);" onclick="javascript:frm4.submit();">MY PAGE</a></h2>
 
 
-<!-- 마이페이지 이동 --> 
 <!-- Header -->
     <header id="header" class="ex-header" style="padding-bottom:100px; padding-top:130px; margin-bottom:100px;">
         <div class="container">
