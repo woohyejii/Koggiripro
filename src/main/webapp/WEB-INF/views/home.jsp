@@ -158,7 +158,7 @@
    <hr />
    <div style="float:right;margin:50px;">
      <%if(name!=null){ %>
-      <button id="insertStudy" onclick="location.href='newStudyForm?userNo=${userNo};'">스터디 생성</button>
+      <button id="insertStudy" onclick="location.href='newStudyForm?userNo=${userNo}';">스터디 생성</button>
      <%}%>
      </div>
    

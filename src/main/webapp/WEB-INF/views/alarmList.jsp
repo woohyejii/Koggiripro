@@ -17,10 +17,9 @@ window.onload = function() {
 		if (document.querySelector("#alert")===null){
 			console.log("True");
 			document.getElementById("body").innerHTML+=
-				//여기에 이미지 넣어주시고 가운데 정렬해주세요!!!
-				`새로운 알림이 없습니다. 
-			<br>도착한 알림이 없습니다.<br>
-			<br><button onclick="location.href='index.jsp'">메인페이지로 이동하기</button>
+				`<br><br>새로 도착한 알림이 없습니다. 
+			
+			<br>
 			<br><br><br><br>`;
 		}else{
 			console.log("False");
@@ -140,7 +139,7 @@ window.onload = function() {
     <!-- end of header -->
 
 
-<div id="body" style="width:70%; margin:0 auto;">
+<div id="body" style="width:60%; margin:0 auto;">
 
 
 	<c:forEach var="tmp" items="${dto }">

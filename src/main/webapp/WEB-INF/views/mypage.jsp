@@ -55,7 +55,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-               A
+               1
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -81,7 +81,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                B
+                2
             </div>
             
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -102,7 +102,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                C
+               	 3	
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->

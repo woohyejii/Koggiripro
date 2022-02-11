@@ -226,7 +226,7 @@ h1{text-align:center;}
         <!-- Core theme JS-->
         <script src="resources/js/info.js"></script>
         <script src="resources/js/scripts.js"></script>
-
+<div style="margin: 0 auto; width:60%;">
 <ul class="qna">
             <li>
                 <input type="checkbox" id="qna-1">
@@ -283,7 +283,7 @@ h1{text-align:center;}
                   </div>
             </li>
         </ul>
-  
+ </div> 
     
 </body>
 </html>
