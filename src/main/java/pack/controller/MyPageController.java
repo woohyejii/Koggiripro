@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import pack.model.AlarmDaoInter;
 import pack.model.BoardDaoInter;
 import pack.model.BoardDto;
 import pack.model.StudyDaoInter;
@@ -22,11 +23,18 @@ import pack.model.StudyDto;
 public class MyPageController {
 	@Autowired
 	private	StudyDaoInter inter;
+	@Autowired
+	private AlarmDaoInter adinter;
 	
 	//마이페이지로 이동
 	@RequestMapping(value="mypage",method=RequestMethod.POST)
-	public ModelAndView firstMyPage(@RequestParam("userNo") String userNo) {
+	public ModelAndView firstMyPage(@RequestParam("userNo") int userNo) {
 		ModelAndView andView = new ModelAndView();
+
+		ArrayList<AlarmBean> dto = adinter.getAlarmList(userNo);
+		andView.addObject("dto",dto);
+		andView.addObject("managerNo",userNo);
+		
 		andView.addObject("userNo",userNo);
 		return andView;
 		
