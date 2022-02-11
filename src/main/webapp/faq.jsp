@@ -213,7 +213,7 @@ h1{text-align:center;}
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumbs">
-                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>FAQ</span>
+                        <a href="index.jsp">Home</a><i class="fa fa-angle-double-right"></i><span>FAQ</span>
                     </div> <!-- end of breadcrumbs -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
