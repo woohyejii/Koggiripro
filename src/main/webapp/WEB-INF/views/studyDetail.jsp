@@ -45,7 +45,7 @@ function moveSign(){
 		//만약에 이미 가입이 되어있으면 가입된 스터디라고 알림창 띄우고 마이페이지로 이동
 			if(${result==""}){
 				alert("이미 가입된 스터디 입니다.");
-				location.href=`mypage?userNo=+${userNo }`;
+				location.href=`home`;
 				
 				return;
 			}
