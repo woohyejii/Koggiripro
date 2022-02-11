@@ -27,7 +27,11 @@
 </style>
 </head>
 <body id="page-top" class="">
-
+<%
+	//로그인된 아이디가 있는지 확인
+	String name = (String) session.getAttribute("namekey");
+	int userNo = (Integer) session.getAttribute("userNo");
+%>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -92,7 +96,7 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">으갸갸갹</h6>
-                        <a class="collapse-item"  href="check_password.jsp">회원정보수정</a>
+                        <a class="collapse-item"  href="check_password.jsp">회원정보 수정</a>
                     </div>
                 </div>
             </li>
@@ -113,8 +117,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">관리하거라</h6>
-                        <a class="collapse-item" href="javascript:void(0);" onclick="javascript:frm2.submit();">게시물관리</a>
-                        <a class="collapse-item" href="javascript:void(0);" onclick="javascript:frm3.submit();">댓글관리</a>
+                        <a class="collapse-item" href="javascript:void(0);" onclick="javascript:frm2.submit();">게시물 관리</a>
+                        <a class="collapse-item" href="javascript:void(0);" onclick="javascript:frm3.submit();">댓글 관리</a>
                     </div>
                 </div>
             </li>
@@ -247,29 +251,9 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b><%=name %></b> 님  환영합니다.	</span>
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
+                            
                         </li>
 
                     </ul>
@@ -284,12 +268,67 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"></h1>
 					</div>
-					<%
-						//로그인된 아이디가 있는지 확인
-						String name = (String) session.getAttribute("namekey");
-						int userNo = (Integer) session.getAttribute("userNo");
-					%>
-					<h3><%=name %> 님 </h3> 환영합니다.	
+				
+			<a href="javascript:frm.submit();">
+				<div style="margin-top:50px;">		
+				<div style="background-color:white; width:250; height:400; text-align:center; margin-left:50px; float:left;">
+				<br><br>
+				<b><font size="5px">스터디 조회</font></b>
+				<br>
+	            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+				  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+				</svg>
+				<br><br>
+				가입한 스터디와 운영중인 스터디를 확인할 수 있습니다.
+	            </div>
+            </a>
+            
+            <a href="check_password.jsp">
+	            <div style="background-color:white; width:250; height:400; text-align:center; margin-left:50px; float:left;">
+				<br><br>
+				<b><font size="5px">회원정보 수정</font></b>
+				<br>
+	            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
+				  <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
+				</svg>
+				<br><br>
+				회원정보 수정과 회원탈퇴를<br>
+				 할 수 있습니다.
+	            </div>
+            </a>
+            
+            <a href="javascript:frm2.submit();">
+	            <div style="background-color:white; width:250; height:400; text-align:center; margin-left:50px; float:left;">
+				<br><br>
+				<b><font size="5px">게시물 관리</font></b>
+				<br>
+	            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+				  <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+				</svg>
+				<br><br>
+				작성한 게시물을 모아서<br> 볼 수 있습니다.
+	            </div>
+            </a>
+            
+            <a href="javascript:frm3.submit();">
+	            <div style="background-color:white; width:250; height:400; text-align:center; margin-left:50px; float:left;">
+				<br><br>
+				<b><font size="5px">댓글 관리</font></b>
+				<br>
+	            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-at" viewBox="0 0 16 16">
+				  <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"/>
+				</svg>
+				<br><br>
+				작성한 댓글을 모아서<br> 볼 수 있습니다.
+	            </div>
+            </a>
+            
+            
+            </div>
+            
+            
+            
+            
             
                 </div>
                 <!-- /.container-fluid -->
@@ -297,16 +336,7 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright © Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
+          
         </div>
         <!-- End of Content Wrapper -->
 
