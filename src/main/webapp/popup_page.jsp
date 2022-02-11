@@ -62,9 +62,9 @@ function checkName(){
 	//로그인된 아이디가 있는지 확인
 	int userNo = (Integer) session.getAttribute("userNo");
 %>
-
-	<h3>닉네임 변경</h3>
-	
+<center style="margin-top:150px;">
+	<h2>닉네임 변경</h2>
+	<br><br>
 	<!-- 닫기버튼 클릭시 아래 폼을 전송함 -->
 	<form action="close.jsp" method="post">
 	</form>
@@ -78,8 +78,9 @@ function checkName(){
 		<input type="button" value="중복확인" id="btnName">
 		
 	</form>
-	
+	<br>
 	
 	<input type="button" value="닫기" onclick="location.href='close.jsp'"></button>
+	</center>
 </body>
 </html>
