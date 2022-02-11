@@ -332,7 +332,7 @@ margin: 50px;
 	
 	<script>
 		function btnWD_event(){
-			if(confirm("정말 탈퇴 하시겠습니까?\n탈퇴시 작성한 게시글은 자동으로 삭제되지만 작성한 댓글은 삭제되지 않습니다.")==true){//확인
+			if(confirm("정말 탈퇴 하시겠습니까?\n탈퇴시 작성한 게시글과 댓글은 자동으로 삭제됩니다.")==true){//확인
 				console.log("확인");
 				document.getElementById("DoWithdrawal").submit();
 			
