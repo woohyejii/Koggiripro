@@ -2,7 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<!-- bootstrap css 로딩 --> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!-- bootstrap javascript 로딩 --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- bootstrap css 로딩 --> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!-- bootstrap javascript 로딩 --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,10 +28,6 @@ window.onload = function() {
 	
 }
 </script>
-
-
-
-
 
     <!-- Custom fonts for this template-->
     <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -144,6 +141,7 @@ window.onload = function() {
                         <h6 class="collapse-header">관리하거라</h6>
                         <a class="collapse-item" href="javascript:void(0);" onclick="javascript:frm2.submit();">게시물 관리</a>
                         <a class="collapse-item" href="javascript:void(0);" onclick="javascript:frm3.submit();">댓글 관리</a>
+                        <a class="collapse-item"  href="alarmList?userNo=${userNo }">알림</a>
                     </div>
                 </div>
             </li>
@@ -314,6 +312,43 @@ window.onload = function() {
 	</c:forEach>
 	<a href='index.jsp'>메인페이지로 이동하기</a>
 </div>
+
+ <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">로그아웃</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">떠나실 건가요?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">아니요</button>
+                    <a class="btn btn-primary" href="logout">떠날게요</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="resources/vendor/jquery/jquery.min.js"></script>
+    <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="resources/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="resources/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="resources/js/demo/chart-area-demo.js"></script>
+    <script src="resources/js/demo/chart-pie-demo.js"></script>
+
 
 </body>
 </html>

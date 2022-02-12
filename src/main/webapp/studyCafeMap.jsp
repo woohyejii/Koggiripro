@@ -155,6 +155,10 @@
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
     
+    	<!-- 마이페이지 이동 -->
+	<form action="mypage" method="post" name="frm">
+		<input type="hidden" name="userNo" value=${userNo}>
+	</form>
     
     
 <div class="map_wrap" style="top:100px;width:80%;height:570px; margin: 0 auto;">

@@ -122,6 +122,7 @@
                         <h6 class="collapse-header">관리하거라</h6>
                         <a class="collapse-item" href="javascript:void(0);" onclick="javascript:frm2.submit();">게시물 관리</a>
                         <a class="collapse-item" href="javascript:void(0);" onclick="javascript:frm3.submit();">댓글 관리</a>
+                        <a class="collapse-item"  href="alarmList?userNo=${userNo }">알림</a>
                     </div>
                 </div>
             </li>

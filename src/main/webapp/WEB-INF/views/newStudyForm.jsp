@@ -13,7 +13,7 @@
 </style>
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>스터디생성</title>
 <script>
 
 //스터디 중복 확인하기 위함
@@ -205,7 +205,7 @@ function checkName(){
                     </li>
                 </ul>
                 
-                <%
+                    <%
                   //로그인된 아이디가 있는지 확인
                   String name=(String)session.getAttribute("namekey");
                   int userNo=(Integer)session.getAttribute("userNo");
@@ -232,7 +232,14 @@ function checkName(){
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
-<!-- 마이페이지 이동 --> 
+    
+       	<!-- 마이페이지 이동 -->
+	<form action="mypage" method="post" name="frm">
+	<input type="hidden" name="userNo" value=${userNo}>
+	</form>
+   
+
+
 <!-- Header -->
     <header id="header" class="ex-header" style="padding-bottom:100px; padding-top:130px; margin-bottom:20px;">
         <div class="container">

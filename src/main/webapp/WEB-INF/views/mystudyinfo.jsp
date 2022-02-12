@@ -23,8 +23,9 @@
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin-2.min.css" rel="stylesheet">
 
-	<!-- Icon -->
-    <script src="https://kit.fontawesome.com/cc41398456.js" crossorigin="anonymous"></script>
+<!-- Icon -->
+<script src="https://kit.fontawesome.com/cc41398456.js"
+	crossorigin="anonymous"></script>
 
 <style type="text/css">/* Chart.js */
 @
@@ -74,11 +75,11 @@ to {
 </style>
 </head>
 <body id="page-top" class="">
-<%
-	//로그인된 아이디가 있는지 확인
+	<%
+		//로그인된 아이디가 있는지 확인
 	String name = (String) session.getAttribute("namekey");
 	int userNo = (Integer) session.getAttribute("userNo");
-%>
+	%>
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
@@ -104,7 +105,7 @@ to {
 					MY PAGE</a></li>
 			<!-- 마이페이지 이동 -->
 			<form action="mypage" method="post" name="frm4">
-			<input type="hidden" name="userNo" value=${userNo}>
+				<input type="hidden" name="userNo" value=${userNo}>
 			</form>
 
 			<!-- Divider -->
@@ -166,10 +167,9 @@ to {
 					aria-labelledby="headingPages" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">관리하거라</h6>
-						<a class="collapse-item" href="javascript:void(0);"
-							onclick="javascript:frm2.submit();">게시물관리</a> <a
-							class="collapse-item" href="javascript:void(0);"
-							onclick="javascript:frm3.submit();">댓글관리</a>
+						<a class="collapse-item" href="javascript:void(0);" onclick="javascript:frm2.submit();">게시물관리</a> 
+						<a class="collapse-item" href="javascript:void(0);" onclick="javascript:frm3.submit();">댓글관리</a> 
+						<a class="collapse-item" href="alarmList?userNo=${userNo }">알림</a>
 					</div>
 				</div></li>
 
@@ -205,116 +205,122 @@ to {
 			<div id="content">
 
 				<!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+				<nav
+					class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+					<!-- Sidebar Toggle (Topbar) -->
+					<button id="sidebarToggleTop"
+						class="btn btn-link d-md-none rounded-circle mr-3">
+						<i class="fa fa-bars"></i>
+					</button>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+					<!-- Topbar Navbar -->
+					<ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1" >
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">
-                                <c:forEach var="tmp" items="${dto }">
-									<c:set var="click" value="${tmp.click }" scope="session"/> 
-									<c:choose>
-										<c:when test="${click == 0}">
-										<c:set var="i" value="${1+i }"/>
-                                		</c:when>
-                                	</c:choose>
-                                </c:forEach>
-                                ${i }+
-                                </span>
-                            </a>
-                            
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    	알림
-                                </h6>
-                                
-                                <c:forEach var="tmp" items="${dto }">
-									<c:set var="click" value="${tmp.click }" scope="session"/> 
-									<c:choose>
-										<c:when test="${click == 0}">
-										<div style="background-color:#cfe2ff;">
-										<a class="dropdown-item d-flex align-items-center" href="#">
-											<div class="mr-3">
-	                                        <div class="icon-circle bg-primary">
-	                                            <i class="fas fa-file-alt text-white"></i>
-	                                        </div>
-	                                    </div>
-	                                    <div>
-	                                        <span class="font-weight-bold" onclick="location.href='alarmform?formNo=${tmp.formNo}';">${tmp.name }님께서 ${tmp.studyName }에 가입 요청을 보냈습니다.</span>
-	                                    </div>
-										</a>
+						<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+						<li class="nav-item dropdown no-arrow d-sm-none"><a
+							class="nav-link dropdown-toggle" href="#" id="searchDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <i class="fas fa-search fa-fw"></i>
+						</a> <!-- Dropdown - Messages -->
+							<div
+								class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+								aria-labelledby="searchDropdown">
+								<form class="form-inline mr-auto w-100 navbar-search">
+									<div class="input-group">
+										<input type="text"
+											class="form-control bg-light border-0 small"
+											placeholder="Search for..." aria-label="Search"
+											aria-describedby="basic-addon2">
+										<div class="input-group-append">
+											<button class="btn btn-primary" type="button">
+												<i class="fas fa-search fa-sm"></i>
+											</button>
 										</div>
+									</div>
+								</form>
+							</div></li>
+
+						<!-- Nav Item - Alerts -->
+						<li class="nav-item dropdown no-arrow mx-1"><a
+							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <i class="fas fa-bell fa-fw"></i> <!-- Counter - Alerts -->
+								<span class="badge badge-danger badge-counter"> <c:forEach
+										var="tmp" items="${dto }">
+										<c:set var="click" value="${tmp.click }" scope="session" />
+										<c:choose>
+											<c:when test="${click == 0}">
+												<c:set var="i" value="${1+i }" />
+											</c:when>
+										</c:choose>
+									</c:forEach> ${i }+
+							</span>
+						</a> <!-- Dropdown - Alerts -->
+							<div
+								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="alertsDropdown">
+								<h6 class="dropdown-header">알림</h6>
+
+								<c:forEach var="tmp" items="${dto }">
+									<c:set var="click" value="${tmp.click }" scope="session" />
+									<c:choose>
+										<c:when test="${click == 0}">
+											<div style="background-color: #cfe2ff;">
+												<a class="dropdown-item d-flex align-items-center" href="#">
+													<div class="mr-3">
+														<div class="icon-circle bg-primary">
+															<i class="fas fa-file-alt text-white"></i>
+														</div>
+													</div>
+													<div>
+														<span class="font-weight-bold"
+															onclick="location.href='alarmform?formNo=${tmp.formNo}';">${tmp.name }님께서
+															${tmp.studyName }에 가입 요청을 보냈습니다.</span>
+													</div>
+												</a>
+											</div>
 										</c:when>
 										<c:otherwise>
-										
-										<div style="background-color:#e2e3e5;">
-										<a class="dropdown-item d-flex align-items-center" href="#">
-											<div class="mr-3">
-	                                        <div class="icon-circle bg-primary">
-	                                            <i class="fas fa-file-alt text-white"></i>
-	                                        </div>
-	                                    </div>
-	                                    <div>
-	                                        <span class="font-weight-bold" onclick='alert("이미 처리되었습니다.")'>${tmp.name }님께서 ${tmp.studyName }에 가입 요청을 보냈습니다.</span>
-	                                    </div>
-										</a>
-										</div>
+
+											<div style="background-color: #e2e3e5;">
+												<a class="dropdown-item d-flex align-items-center" href="#">
+													<div class="mr-3">
+														<div class="icon-circle bg-primary">
+															<i class="fas fa-file-alt text-white"></i>
+														</div>
+													</div>
+													<div>
+														<span class="font-weight-bold"
+															onclick='alert("이미 처리되었습니다.")'>${tmp.name }님께서
+															${tmp.studyName }에 가입 요청을 보냈습니다.</span>
+													</div>
+												</a>
+											</div>
 										</c:otherwise>
 									</c:choose>
 								</c:forEach>
-                                
-                                <a class="dropdown-item text-center small text-gray-500" href="alarmList?userNo=${userNo }">Show All Alerts</a>
-                            </div>
-                        </li>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+								<a class="dropdown-item text-center small text-gray-500"
+									href="alarmList?userNo=${userNo }">Show All Alerts</a>
+							</div></li>
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b><%=name %></b> 님 환영합니다</span>&nbsp;
-                                
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            
-                        </li>
+						<div class="topbar-divider d-none d-sm-block"></div>
 
-                    </ul>
+						<!-- Nav Item - User Information -->
+						<li class="nav-item dropdown no-arrow"><a
+							class="nav-link dropdown-toggle" href="#" id="userDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <span
+								class="mr-2 d-none d-lg-inline text-gray-600 small"><b><%=name%></b>
+									님 환영합니다</span>&nbsp;
 
-                </nav>
-                <!-- End of Topbar -->
+						</a> <!-- Dropdown - User Information --></li>
+
+					</ul>
+
+				</nav>
+				<!-- End of Topbar -->
 
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
@@ -411,10 +417,9 @@ function member1(){
 		})
  }
 </script>
-	<div id="showStudy">
-	</div>
-	</div>
-<!-- End of Content Wrapper -->
+					<div id="showStudy"></div>
+				</div>
+				<!-- End of Content Wrapper -->
 
 			</div>
 			<!-- End of Page Wrapper -->
@@ -424,24 +429,27 @@ function member1(){
 				style="display: none;"> <i class="fas fa-angle-up"></i>
 			</a>
 
-  <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">로그아웃</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">떠나실 건가요?</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">아니요</button>
-                    <a class="btn btn-primary" href="logout">떠날게요</a>
-                </div>
-            </div>
-        </div>
-    </div>
+			<!-- Logout Modal-->
+			<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">로그아웃</h5>
+							<button class="close" type="button" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body">떠나실 건가요?</div>
+						<div class="modal-footer">
+							<button class="btn btn-secondary" type="button"
+								data-dismiss="modal">아니요</button>
+							<a class="btn btn-primary" href="logout">떠날게요</a>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<!-- Bootstrap core JavaScript-->
 			<script src="resources/vendor/jquery/jquery.min.js"></script>
