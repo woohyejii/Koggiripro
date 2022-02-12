@@ -42,8 +42,13 @@ public class MyPageController {
 	
 	//스터디 조회 페이지로 이동
 	@RequestMapping(value="mystudyinfo",method=RequestMethod.POST)
-	public ModelAndView mystudyinfo(@RequestParam("userNo") String userNo) {
+	public ModelAndView mystudyinfo(@RequestParam("userNo") int userNo) {
 		ModelAndView andView = new ModelAndView();
+		
+		ArrayList<AlarmBean> dto = adinter.getAlarmList(userNo);
+		andView.addObject("dto",dto);
+		andView.addObject("managerNo",userNo);
+		
 		andView.addObject("userNo",userNo);
 		return andView;
 		
