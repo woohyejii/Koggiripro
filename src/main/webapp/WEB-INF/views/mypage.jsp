@@ -245,7 +245,7 @@
 									</c:choose>
 								</c:forEach>
                                 
-                                <a class="dropdown-item text-center small text-gray-500" href="alarmList?userNo=${userNo }">Show All Alerts</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="alarmList?userNo=${userNo }">알림보기</a>
                             </div>
                         </li>
 
