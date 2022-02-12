@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -303,7 +305,7 @@ function checkData(){
                                 <label class="label-control" for="semail" >아이디</label>
                                 <div class="help-block with-errors"></div>
                                 <br>
-                                <button type="button" class="form-control-submit-button" value="sign-up" id="btnId">
+                                <button type="button" class="form-control-submit-button" id="btnId">
                                     중복확인</button>
                             </div>
                             <div class="form-group">
@@ -321,7 +323,7 @@ function checkData(){
                                 <label class="label-control" for="sname">닉네임</label>
                                 <div class="help-block with-errors"></div>
                                 <br>
-                                 <button type="button" class="form-control-submit-button" value="sign-up" id="btnId">
+                                 <button type="button" class="form-control-submit-button" id="btnName">
                                     중복확인</button>
                             </div>
                             <div class="form-group">
@@ -372,7 +374,7 @@ function checkData(){
     <script src="resources/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="resources/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="resources/js/scripts.js"></script> <!-- Custom scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
 	crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
